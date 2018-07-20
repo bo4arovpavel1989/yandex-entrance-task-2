@@ -13,6 +13,19 @@
 	height:27px;
 	width:108px;
 	background:url('images/brand2.png') no-repeat;
-	 background-position:center;
+	background-position:center;
 	background-size:contain;
+}
+
+.main-panel {
+	height:331px;
+	width:630px;
+	background:url('images/main_bg.png') no-repeat;
+	background-position:center;
+	background-size:contain;
+}
+
+.scenarion-panel {
+	height:100px;
+	width:200px;
 }
