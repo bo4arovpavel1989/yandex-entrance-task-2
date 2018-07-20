@@ -25,7 +25,29 @@
 	background-size:contain;
 }
 
+.temp {
+	display:inline-block;
+}
+
 .scenarion-panel {
 	height:100px;
 	width:200px;
+	background-color:#F7F7F7;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px;
+	display:inline-block;
+}
+
+.scenarion-panel:hover {
+	background-color:#FFFFFF;
+}
+
+.device-panel {
+	height:100px;
+	width:200px;
+	background-color:#F7F7F7;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
 }
