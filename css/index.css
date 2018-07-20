@@ -1,0 +1,18 @@
+.mycontainer {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.mynavbar {
+	background-color: white !important;
+	padding:40px 40px 40px 60px;
+	border-bottom-color: #F0F0F0;
+}
+
+.navbar-brand {
+	height:27px;
+	width:108px;
+	background:url('images/brand2.png') no-repeat;
+	 background-position:center;
+	background-size:contain;
+}
