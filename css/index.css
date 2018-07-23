@@ -1,3 +1,7 @@
+body {
+	font-family: Arial-BoldMT;
+}
+
 .mycontainer {
 	padding-left: 0;
 	padding-right: 0;
@@ -17,19 +21,46 @@
 	background-size:contain;
 }
 
+.nav.navbar-nav>li>a {
+	font-size: 16px;
+	color: #333333;
+	line-height: 20px;
+}
+
+.content {
+	padding:0 40px 0 40px;
+}
+
+.row {
+	margin:0;
+}
+
+.inner-header {
+	margin: 0;
+}
+
+.main {
+	padding:0;
+}
+
 .main-panel {
 	height:331px;
 	width:630px;
 	background:url('images/main_bg.png') no-repeat;
 	background-position:center;
 	background-size:contain;
+	padding: 26px 0 20px 25px;
 }
 
 .temp {
 	display:inline-block;
 }
 
-.scenarion-panel {
+.favscenarios {
+	max-height:300px;
+}
+
+.scenarios-panel {
 	height:100px;
 	width:200px;
 	background-color:#F7F7F7;
@@ -39,8 +70,15 @@
 	display:inline-block;
 }
 
-.scenarion-panel:hover {
+.scenarios-panel:hover {
 	background-color:#FFFFFF;
+	box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
+	cursor:pointer;
+}
+
+.devices {
+	white-space: nowrap;	
+	overflow-x:auto;
 }
 
 .device-panel {
@@ -50,4 +88,5 @@
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
+	display:inline-block;
 }

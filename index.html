@@ -10,7 +10,7 @@
 	<nav class="navbar navbar-default">
       <div class="container-fluid mynavbar">
         <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -19,18 +19,19 @@
           <a class="navbar-brand" href="#">
           </a>
         </div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="bs-collapse-1">
           <ul class="nav navbar-nav">
-          <li><a href="#">Сводка</a></li>
-          <li><a href="#">Устройства</a></li>
-          <li><a href="#">Сценарии</a></li>
+            <li><a href="#">Сводка</a></li>
+            <li><a href="#">Устройства</a></li>
+            <li><a href="#">Сценарии</a></li>
+		  </ul>
 		<div>  
       </div>
     </nav>
-    <div class='container-fluid'>
+    <div class='container-fluid content'>
 	<div class='row'>
 	  <div class='col-md-6 main'>
-	    <h3>Главное</h3>
+	    <h3 class='inner-header'>Главное</h3>
 		<div class='main-panel'>
 		  <h2>Привет, Геннадий!</h2>
 		  <p>Двери и окна закрыты, сигнализация включена.</p>
@@ -48,57 +49,68 @@
 	  </div>
 	  <div class='col-md-6 favscenarios'>
 	    <h3>Избранные сценарии</h3>
-		<div class='scenarion-panel'>
-		  <img alt='lightoff'>
+		<div class='scenarios-panel'>
+		  <img alt='lighton' src='css/images/lighton.png'>
 		  <p>Выключить весь свет в доме и во дворе</p>
 		</div>
-		<div class='scenarion-panel'>
-		  <img alt='leave'>
+		<div class='scenarios-panel'>
+		  <img alt='clockoff'  src='css/images/clockoff.png'>
 		  <p>Я ухожу</p>
 		</div>
-		<div class='scenarion-panel'>
-		  <img alt='lighton'>
+		<div class='scenarios-panel'>
+		  <img alt='lighton'  src='css/images/lighton.png'>
 		  <p>Включить свет в коридоре</p>
 		</div>
-		<div class='scenarion-panel'>
-		  <img alt='watertemp'>
+		<div class='scenarios-panel'>
+		  <img alt='tempon'  src='css/images/tempon.png'>
 		  <p>Набрать горячую ванную</p>
 		  <p>Начнется в 18:00</p>
 		</div>
-		<div class='scenarion-panel'>
-		  <img alt='warmfloor'>
+		<div class='scenarios-panel'>
+		  <img alt='tempon'  src='css/images/tempon.png'>
 		  <p>Сделать пол теплым во всей квартире</p>
 		</div>
 	  </div>
 	</div>
 	<div class='row scenarios-header'>
-	  <div class='col-md-12'>
-	    <h3>Избранные устройства</h3>
-	  <div>	
+	  <h3>Избранные устройства</h3>
 	</div>
-	<div class='row scenarios'>
-	  <div class='col-md-12'>
+	<div class='row devices'>
 		<div class='device-panel'>
+		  <img alt='lighton'  src='css/images/lighton.png'>
+		  <p>Xiaomi Yeelight LED Smart Bulb</p>
+		  <p>Включено</p>
 		</div>
 		<div class='device-panel'>
+		  <img alt='lightoff'  src='css/images/lightoff.png'>
+		  <p>D-Link Omna 180 Cam</p>
+		  <p>Включится в 17:00</p>
 		</div>
 		<div class='device-panel'>
+		  <img alt='tempoff'  src='css/images/tempoff.png'>
+		  <p>Elgato Eve Degree Connected</p>
+		  <p>Включится до 17:00</p>
 		</div>
 		<div class='device-panel'>
+		  <img alt='lightoff'  src='css/images/lightoff.png'>
+		  <p>LIFX Mini Day & Dusk A60 E27</p>
+		  <p>Включится в 17:00</p>
 		</div>
 		<div class='device-panel'>
+		  <img alt='lighton'  src='css/images/lighton.png'>
+		  <p>Xiaomi Mi Air Purifier 2S</p>
+		  <p>Включено</p>
 		</div>
 		<div class='device-panel'>
+		  <img alt='lightoff'  src='css/images/lightoff.png'>
+		  <p>Philips Zhirui</p>
+		  <p>Выключено</p>
 		</div>
 		<div class='device-panel'>
+		  <img alt='lighton'  src='css/images/lighton.png'>
+		  <p>Xiaomi</p>
+		  <p>Включено</p>
 		</div>
-		<div class='device-panel'>
-		</div>
-		<div class='device-panel'>
-		</div>
-		<div class='device-panel'>
-		</div>
-	  <div>	
 	</div>
     </div>
 	<footer>
