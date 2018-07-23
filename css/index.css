@@ -6,29 +6,56 @@ body {
 	padding-left: 0;
 	padding-right: 0;
 }
-
+.navbar{
+	height:92px;
+	margin: 0;
+	padding: 16px 0 33px 40px;
+	background-color: white;
+	vertical-align:center;
+}
 .mynavbar {
 	background-color: white !important;
-	padding:40px 40px 40px 60px;
+	padding: 0;
+	margin:0;
+	padding-left:20px;
 	border-bottom-color: #F0F0F0;
+	border-bottom-width: 1px;
 }
 
 .navbar-brand {
+	margin-top:8px;
 	height:27px;
 	width:108px;
 	background:url('images/brand2.png') no-repeat;
-	background-position:center;
+	background-position:left;
 	background-size:contain;
 }
 
-.nav.navbar-nav>li>a {
+#bs-collapse-1{
+	margin:0;
+	padding:0;
+}
+ul.nav.navbar-nav {
+	padding-left:52px;
+}
+.nav-btn {
 	font-size: 16px;
-	color: #333333;
-	line-height: 20px;
+	color: #333333 !important;
+	line-height: 20px !important;
+	opacity:0.6 !important;
+	margin:0;
+	padding-right:0 !important;
+	padding-left:0 !important;
+	margin-right:26px;
+}
+
+.active {
+	opacity: 1 !important;
+	margin-right:28px;
 }
 
 .content {
-	padding:0 40px 0 40px;
+	padding:30px 40px 0 40px;
 }
 
 .row {
@@ -36,7 +63,7 @@ body {
 }
 
 .inner-header {
-	margin: 0;
+	margin: 0 0 20px 0;
 }
 
 .main {
@@ -49,11 +76,28 @@ body {
 	background:url('images/main_bg.png') no-repeat;
 	background-position:center;
 	background-size:contain;
-	padding: 26px 0 20px 25px;
+	padding: 26px 20px 20px 25px;
+}
+
+.main-data {
+	display: -webkit-flex; 
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .temp {
 	display:inline-block;
+}
+
+.device-block {
+	display: -webkit-flex; 
+	-webkit-flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	overflow-y: hidden;
+	height: 300px;
 }
 
 .favscenarios {
@@ -68,6 +112,7 @@ body {
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
 	display:inline-block;
+	padding: 14px 0 14px 15px;
 }
 
 .scenarios-panel:hover {
@@ -78,15 +123,17 @@ body {
 
 .devices {
 	white-space: nowrap;	
-	overflow-x:auto;
+	overflow-x:hidden;
 }
 
 .device-panel {
-	height:100px;
+	height:120px;
 	width:200px;
 	background-color:#F7F7F7;
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
 	display:inline-block;
+	margin-bottom:15px;
+	padding: 14px 0 14px 15px;
 }
