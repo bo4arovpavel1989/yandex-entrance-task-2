@@ -6,7 +6,7 @@
 }
 
 body {
-	font-family: Arial-BoldMT !important;
+	font-family: Arial-BoldMT;
 }
 
 .mycontainer {
@@ -54,7 +54,6 @@ ul.nav.navbar-nav {
 	padding-right:0 !important;
 	padding-left:0 !important;
 	margin-right:26px;
-	font-family: Arial-BoldMT !important;
 }
 
 .active {
@@ -73,11 +72,23 @@ ul.nav.navbar-nav {
 .inner-header {
 	margin: 0 0 20px 0;
 	display:inline;
-	font-family: Arial-BoldMT;
+	font-size: 18px;
+	color: #333333;
 }
 
 .main {
 	padding:0;
+}
+
+.greeting{
+	font-size: 27px;
+	color: #333333;
+}
+
+.general-info {
+	font-family: ArialMT;
+	font-size: 14px;
+	color: #333333;
 }
 
 .main-panel {
@@ -102,6 +113,21 @@ ul.nav.navbar-nav {
 	display:inline-block;
 }
 
+.where {
+	font-family: ArialMT;
+	font-size: 14px;
+	color: #858585;
+	margin:0;
+}
+
+.tempval {
+	font-size: 36px;
+	color: #333333;
+	letter-spacing: 0;
+	text-align: left;
+	margin-right:18px;
+}
+
 .device-block {
 	display: -webkit-flex; 
 	-webkit-flex-direction: column;
@@ -119,7 +145,7 @@ ul.nav.navbar-nav {
 }
 
 .favscenarios {
-	max-height:300px;
+	max-height:350px;
 }
 
 .arrows {
@@ -129,20 +155,40 @@ ul.nav.navbar-nav {
 	padding:0;
 }
 
+.scenarios-header {
+	margin-top:34px;
+}
+
 .scenarios {
+	display: -webkit-flex;
+    -webkit-flex-wrap: wrap; 
 	display:flex;
+	flex-wrap: wrap;
 	overflow-x: hidden;
+	max-height:350px;
+	margin-top:20px;
 }
 
 .scenarios-panel {
 	height:100px;
 	width:200px;
+	min-width:200px;
 	background-color:#F7F7F7;
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
 	display:inline-block;
 	padding: 14px 0 14px 15px;
+	margin-right:15px;
+	margin-bottom:15px;
+}
+
+.scenario-state {
+	font-family: ArialMT;
+	font-size: 12px;
+	color: #858585;
+	letter-spacing: 0;
+	text-align: left;
 }
 
 .scenarios-panel:hover {
@@ -151,21 +197,45 @@ ul.nav.navbar-nav {
 	cursor:pointer;
 }
 
-.devices {
-	white-space: nowrap;	
-	overflow-x:hidden;
+.devices {	
+    display: -webkit-flex;
+    -webkit-flex-wrap: nowrap; 
+	display:flex;
+	flex-wrap: nowrap;
+	overflow-x: hidden;
+	max-height:350px;
+	margin-top:25px;
 }
 
 .device-panel {
 	height:120px;
 	width:200px;
+	min-width:200px;
 	background-color:#F7F7F7;
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
 	display:inline-block;
 	margin-bottom:15px;
+	white-space: normal;
 	padding: 14px 0 14px 15px;
+	margin-right:15px;
+}
+
+.device-name, .scenario-name {
+	font-size: 14px;
+	color: #333333;
+	letter-spacing: 0;
+	text-align: left;
+	padding:0;
+}
+
+.device-state {
+	font-family: ArialMT;
+	font-size: 12px;
+	color: #858585;
+	letter-spacing: 0.01px;
+	text-align: left;
 }
 
 footer {

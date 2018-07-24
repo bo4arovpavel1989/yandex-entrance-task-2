@@ -36,49 +36,54 @@
 		<div class='main-panel'>
 		  <div class='main-data'>
 		  <div>
-		    <h2>Привет, Геннадий!</h2>
-		    <p>Двери и окна закрыты, сигнализация включена.</p>
+		    <h2 class='greeting'>Привет, Геннадий!</h2>
+		    <p class='general-info'>Двери и окна закрыты, сигнализация включена.</p>
 		    <div class='temperature-block'>
 		      <div class='temp inside'>
-			    <p>Дома</p>
-			    <p>+23</p>
+			    <p class='where'>Дома</p>
+			    <p class='tempval'>+23</p>
 			  </div>
 			  <div class='temp outside'>
-			    <p>За окном</p>
-			    <p>+19</p>
+			    <p  class='where'>За окном</p>
+			    <p class='tempval'>+19</p>
 			  </div>
 		    </div>
 		  </div>
 		  <div class='device-block'>
-			<div class='device-panel'>
-		      <img alt='lighton'  src='css/images/lighton.png'>
-		      <p>Xiaomi Yeelight LED Smart Bulb</p>
-		      <p>Включено</p>
-		    </div>
-		    <div class='device-panel'>
-		      <img alt='lightoff'  src='css/images/lightoff.png'>
-		      <p>D-Link Omna 180 Cam</p>
-		      <p>Включится в 17:00</p>
-		    </div>
-		    <div class='device-panel'>
-		      <img alt='tempoff'  src='css/images/tempoff.png'>
-		      <p>Elgato Eve Degree Connected</p>
-		      <p>Включится до 17:00</p>
-		    </div>
-		    <div class='device-panel'>
-		      <img alt='lightoff'  src='css/images/lightoff.png'>
-		      <p>LIFX Mini Day & Dusk A60 E27</p>
-		      <p>Включится в 17:00</p>
-		    </div>
 		    <div class='device-panel'>
 		      <img alt='lighton'  src='css/images/lighton.png'>
-		      <p>Xiaomi Mi Air Purifier 2S</p>
-		      <p>Включено</p>
+		      <p class='device-name'>Xiaomi Yeelight LED Smart Bulb</p>
+		    <p class='device-state'>Включено</p>
+    		</div>
+	    	<div class='device-panel'>
+		     <img alt='lightoff'  src='css/images/lightoff.png'>
+    		  <p  class='device-name'>D-Link Omna 180 Cam</p>
+	    	  <p  class='device-state'>Включится в 17:00</p>
+	    	</div>
+    		<div class='device-panel'>
+	    	  <img alt='tempoff'  src='css/images/tempoff.png'>
+		      <p  class='device-name'>Elgato Eve Degree Connected</p>
+		      <p  class='device-state'>Включится до 17:00</p>
+	    	</div>
+	    	<div class='device-panel'>
+		      <img alt='lightoff'  src='css/images/lightoff.png'>
+		      <p  class='device-name'>LIFX Mini Day & Dusk A60 E27</p>
+		      <p  class='device-state'>Включится в 17:00</p>
+		    </div>
+		    <div class='device-panel'>
+		      <img alt='lighton'  src='css/images/lighton.png'>
+		      <p  class='device-name'>Xiaomi Mi Air Purifier 2S</p>
+		      <p  class='device-state'>Включено</p>
 		    </div>
 		    <div class='device-panel'>
 		      <img alt='lightoff'  src='css/images/lightoff.png'>
-		      <p>Philips Zhirui</p>
-		      <p>Выключено</p>
+		      <p  class='device-name'>Philips Zhirui</p>
+		      <p  class='device-state'>Выключено</p>
+		    </div>
+		    <div class='device-panel'>
+		      <img alt='lighton'  src='css/images/lighton.png'>
+		      <p  class='device-name'> Xiaomi</p>
+		      <p  class='device-state'>Включено</p>
 		    </div>
 			<span class='uparrow'>
 			  <img alt='uparrow' src='css/images/up.png'> 
@@ -96,31 +101,31 @@
 		<div class='scenarios'>
 		<div class='scenarios-panel'>
 		  <img alt='lighton' src='css/images/lighton.png'>
-		  <p>Выключить весь свет в доме и во дворе</p>
+		  <p class='scenario-name'>Выключить весь свет в доме и во дворе</p>
 		</div>
 		<div class='scenarios-panel'>
 		  <img alt='clockoff'  src='css/images/clockoff.png'>
-		  <p>Я ухожу</p>
+		  <p class='scenario-name'>Я ухожу</p>
 		</div>
 		<div class='scenarios-panel'>
 		  <img alt='lighton'  src='css/images/lighton.png'>
-		  <p>Включить свет в коридоре</p>
+		  <p class='scenario-name'>Включить свет в коридоре</p>
 		</div>
 		<div class='scenarios-panel'>
 		  <img alt='tempon'  src='css/images/tempon.png'>
-		  <p>Набрать горячую ванную</p>
-		  <p>Начнется в 18:00</p>
+		  <p class='scenario-name'>Набрать горячую ванную</p>
+		  <p class='scenario-state'>Начнется в 18:00</p>
 		</div>
 		<div class='scenarios-panel'>
 		  <img alt='tempon'  src='css/images/tempon.png'>
-		  <p>Сделать пол теплым во всей квартире</p>
+		  <p class='scenario-name'>Сделать пол теплым во всей квартире</p>
 		</div>
 		</div>
 	  </div>
 	</div>
 	<div class='row scenarios-header'>
 	  <div>
-	    <h3>Избранные устройства</h3>
+	    <h3  class='inner-header'>Избранные устройства</h3>
 		  <span class='arrows'><img alt='right' src='css/images/right.png'></span>
 		  <span class='arrows'><img alt='left' src='css/images/left.png'></span>
       </div>
@@ -128,38 +133,38 @@
 	<div class='row devices'>
 		<div class='device-panel'>
 		  <img alt='lighton'  src='css/images/lighton.png'>
-		  <p>Xiaomi Yeelight LED Smart Bulb</p>
-		  <p>Включено</p>
+		  <p class='device-name'>Xiaomi Yeelight LED Smart Bulb</p>
+		  <p class='device-state'>Включено</p>
 		</div>
 		<div class='device-panel'>
 		  <img alt='lightoff'  src='css/images/lightoff.png'>
-		  <p>D-Link Omna 180 Cam</p>
-		  <p>Включится в 17:00</p>
+		  <p  class='device-name'>D-Link Omna 180 Cam</p>
+		  <p  class='device-state'>Включится в 17:00</p>
 		</div>
 		<div class='device-panel'>
 		  <img alt='tempoff'  src='css/images/tempoff.png'>
-		  <p>Elgato Eve Degree Connected</p>
-		  <p>Включится до 17:00</p>
+		  <p  class='device-name'>Elgato Eve Degree Connected</p>
+		  <p  class='device-state'>Включится до 17:00</p>
 		</div>
 		<div class='device-panel'>
 		  <img alt='lightoff'  src='css/images/lightoff.png'>
-		  <p>LIFX Mini Day & Dusk A60 E27</p>
-		  <p>Включится в 17:00</p>
+		  <p  class='device-name'>LIFX Mini Day & Dusk A60 E27</p>
+		  <p  class='device-state'>Включится в 17:00</p>
 		</div>
 		<div class='device-panel'>
 		  <img alt='lighton'  src='css/images/lighton.png'>
-		  <p>Xiaomi Mi Air Purifier 2S</p>
-		  <p>Включено</p>
+		  <p  class='device-name'>Xiaomi Mi Air Purifier 2S</p>
+		  <p  class='device-state'>Включено</p>
 		</div>
 		<div class='device-panel'>
 		  <img alt='lightoff'  src='css/images/lightoff.png'>
-		  <p>Philips Zhirui</p>
-		  <p>Выключено</p>
+		  <p  class='device-name'>Philips Zhirui</p>
+		  <p  class='device-state'>Выключено</p>
 		</div>
 		<div class='device-panel'>
 		  <img alt='lighton'  src='css/images/lighton.png'>
-		  <p>Xiaomi</p>
-		  <p>Включено</p>
+		  <p  class='device-name'> Xiaomi</p>
+		  <p  class='device-state'>Включено</p>
 		</div>
 	</div>
     </div>
