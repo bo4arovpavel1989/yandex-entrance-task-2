@@ -1,5 +1,12 @@
-body {
+@font-face {
 	font-family: Arial-BoldMT;
+	src: local('Arial-BoldMT.ttf'), url(fonts/Arial-BoldMT.ttf);
+	font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: Arial-BoldMT !important;
 }
 
 .mycontainer {
@@ -47,6 +54,7 @@ ul.nav.navbar-nav {
 	padding-right:0 !important;
 	padding-left:0 !important;
 	margin-right:26px;
+	font-family: Arial-BoldMT !important;
 }
 
 .active {
@@ -65,6 +73,7 @@ ul.nav.navbar-nav {
 .inner-header {
 	margin: 0 0 20px 0;
 	display:inline;
+	font-family: Arial-BoldMT;
 }
 
 .main {
@@ -118,6 +127,11 @@ ul.nav.navbar-nav {
 	float:right;
 	margin-right:16px;
 	padding:0;
+}
+
+.scenarios {
+	display:flex;
+	overflow-x: hidden;
 }
 
 .scenarios-panel {
