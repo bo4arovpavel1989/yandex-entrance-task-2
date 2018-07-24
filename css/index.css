@@ -64,6 +64,7 @@ ul.nav.navbar-nav {
 
 .inner-header {
 	margin: 0 0 20px 0;
+	display:inline;
 }
 
 .main {
@@ -76,7 +77,8 @@ ul.nav.navbar-nav {
 	background:url('images/main_bg.png') no-repeat;
 	background-position:center;
 	background-size:contain;
-	padding: 26px 20px 20px 25px;
+	padding: 26px 20px 0 25px;
+	margin-top:20px;
 }
 
 .main-data {
@@ -98,10 +100,24 @@ ul.nav.navbar-nav {
 	flex-direction: column;
 	overflow-y: hidden;
 	height: 300px;
+	position:relative;
+}
+
+.uparrow {
+	position: absolute;
+	top: 270px;
+	left:90px;
 }
 
 .favscenarios {
 	max-height:300px;
+}
+
+.arrows {
+	display:inline;
+	float:right;
+	margin-right:16px;
+	padding:0;
 }
 
 .scenarios-panel {
@@ -136,4 +152,25 @@ ul.nav.navbar-nav {
 	display:inline-block;
 	margin-bottom:15px;
 	padding: 14px 0 14px 15px;
+}
+
+footer {
+	position: fixed;
+	top:92%;
+	height:64px;
+	padding: 22px 36px 27px 40px;
+}
+
+.footerlink {
+	font-size: 12px;
+	color: #858585;
+	letter-spacing: 0.01px;
+}
+
+.copyright {
+	float:right;
+	display:inline;
+	font-size: 12px;
+	color: #858585;
+	letter-spacing: 0.01px;
 }
