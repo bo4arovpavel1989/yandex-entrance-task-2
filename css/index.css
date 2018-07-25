@@ -190,6 +190,48 @@ ul.nav.navbar-nav {
 	margin-bottom:15px;
 }
 
+.tempicon {
+	min-width: 24px !important;
+	min-height:24px !important;
+	background:url('images/tempoff.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+
+.tempicon.activescenario {
+	background:url('images/tempon.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+
+.lighticon {
+	min-width: 24px;
+	min-height:24px;
+	background:url('images/lightoff.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+
+.lighticon.activescenario {
+	background:url('images/lighton.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+
+.clockicon{
+	min-width: 24px;
+	min-height:24px;
+	background:url('images/clockoff.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+
+.clockicon.activescenario {
+	background:url('images/clockon.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+
 .scenario-state {
 	font-family: Arial;
 	font-size: 12px;
@@ -200,10 +242,34 @@ ul.nav.navbar-nav {
 
 .scenarios-panel:hover {
 	background-color:#FFFFFF;
+	-moz-border-radius: 0 2px 6px 0 rgba(197,186,186,0.50); 
+	-webkit-border-radius: 0 2px 6px 0 rgba(197,186,186,0.50); 
 	box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
 	cursor:pointer;
 }
+.deviceheader {
+	height:30px;
+}
+.devicelink {
+	display:inline-block;
+	min-height:30px;
+	text-align: center;
+	margin-right:15px;
+}
 
+.chosen {
+	width: 50px;
+	height:30px;
+	top:15px;
+	background: #FFD93E;
+	border-radius: 20px;
+}
+.devicecategory {
+	margin-top:10px;
+	font-family: Arial-BoldMT;
+	font-size: 13px;
+	color: #000000;
+}
 .devices {	
     display: -webkit-flex;
     -webkit-flex-wrap: nowrap; 
@@ -211,7 +277,7 @@ ul.nav.navbar-nav {
 	flex-wrap: nowrap;
 	overflow-x: hidden;
 	max-height:350px;
-	margin-top:25px;
+	margin-top:5px;
 }
 
 .device-panel {
