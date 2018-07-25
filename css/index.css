@@ -163,7 +163,7 @@ ul.nav.navbar-nav {
 }
 
 .scenarios-header {
-	margin-top:34px;
+	padding-right:50px;
 }
 
 .scenarios {
@@ -184,7 +184,11 @@ ul.nav.navbar-nav {
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
-	display:inline-block;
+	display: -webkit-flex; 
+	-webkit-flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	padding: 14px 0 14px 15px;
 	margin-right:15px;
 	margin-bottom:15px;
@@ -232,6 +236,19 @@ ul.nav.navbar-nav {
 	background-size:contain;
 }
 
+.scenario-content {
+	margin-top:10px;
+	line-height: 20px;
+}
+
+.scenario-name{
+	font-size: 14px;
+	color: #333333;
+	letter-spacing: 0;
+	text-align: left;
+	margin:0;
+}
+
 .scenario-state {
 	font-family: Arial;
 	font-size: 12px;
@@ -247,9 +264,16 @@ ul.nav.navbar-nav {
 	box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
 	cursor:pointer;
 }
+
+.devices-header {
+	margin-top:34px;
+	margin-bottom:15px;
+}
+
 .deviceheader {
 	height:30px;
 }
+
 .devicelink {
 	display:inline-block;
 	min-height:30px;
@@ -286,13 +310,16 @@ ul.nav.navbar-nav {
 	min-width:200px;
 	background-color:#F7F7F7;
 	-moz-border-radius: 20px; 
-	-webkit-border-radius: 20px;
+	-webkit-border-radius: 20px; 
 	border-radius: 20px;
-	display:inline-block;
-	margin-bottom:15px;
-	white-space: normal;
+	display: -webkit-flex; 
+	-webkit-flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	padding: 14px 0 14px 15px;
 	margin-right:15px;
+	margin-bottom:15px;
 }
 
 .device-name, .scenario-name {
@@ -301,6 +328,7 @@ ul.nav.navbar-nav {
 	letter-spacing: 0;
 	text-align: left;
 	padding:0;
+	margin:0;
 }
 
 .device-state {
@@ -309,6 +337,7 @@ ul.nav.navbar-nav {
 	color: #858585;
 	letter-spacing: 0.01px;
 	text-align: left;
+	margin:0;
 }
 
 footer {
