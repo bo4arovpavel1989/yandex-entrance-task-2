@@ -1,19 +1,46 @@
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 978px) {
 	.content {
-		padding:30px 20px 0 20px;
+		padding:0 20px 0 20px;
 	}
+	
+	.navbar-toggle.collapsed{
+		border-style: none;
+	}
+	
+	.icon-menu {	
+		display:inline-block;
+		min-width: 16px;
+		min-height:13.1px;
+		background:url('images/icon_list_m.png') no-repeat;
+		background-position:left;
+		background-size:contain;
+	}
+	
+	nav.navbar.navbar-default {
+		border-style: none;
+		padding-bottom:13px;
+	}
+	
 	.mynavbar {
-		border-bottom-color: white;
+		border-style: none;
+		padding-right:20px;
+		padding-bottom:0;
 	}
 
 	.firstrow {
-		display:block
+		display: -webkit-flex; 
+		-webkit-flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 		
 	.main-panel {
 		width:100% !important;
 		height:282px;
-		background-size:auto;
+		background-size:cover;
+		margin-top:0;
+		padding-top:21px;
 		padding-right:0;
 		-moz-border-radius: 20px; 
 		-webkit-border-radius: 20px; 
@@ -30,6 +57,7 @@
 	
 	.greeting{
 		font-size: 18px;
+		margin-top:0;
 	}
 
 	.general-info {
@@ -42,6 +70,7 @@
 		
 	.tempval {
 		font-size: 24px;
+		margin-bottom:20px;
 	}
 	
 	.device-block {
@@ -49,13 +78,22 @@
 		-webkit-flex-direction: row;
 		display: flex;
 		flex-direction: row;
-		overflow-x: hidden;
-		height: 300px;
+		overflow-x: auto;
+		overflow-y: hidden;
 		position:relative;
+		width:100%;
+		height:120px;
+		margin-bottom:20px;
+		margin-top:20px;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+	.device-block::-webkit-scrollbar{
+		display:none;
 	}
 	
 	.favscenarios {
 		margin-top: 31px;
+		margin-left: 0;
 	}
 	
 	.scenarios {	
@@ -63,6 +101,22 @@
 		-webkit-flex-wrap: nowrap; 
 		display:flex;
 		flex-wrap: nowrap;
+		overflow-x: auto;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+	
+	.scenarios::-webkit-scrollbar {	
+		display: none;
+		
+	}
+	
+	.devices {
+		overflow-x: auto;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+	
+	.devices::-webkit-scrollbar  {
+		display:none;
 	}
 	
 	footer {

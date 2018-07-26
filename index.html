@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="css/media.css" />
   </head>
   <body>
+  <div class='blur hidden'></div>
 	<nav class="navbar navbar-default">
       <div class="container-fluid mynavbar">
         <div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-menu"></span>
         </button>
           <a class="navbar-brand" href="#">
           </a>
@@ -32,7 +31,7 @@
     <div class='container-fluid content'>
 	<div class='myrow firstrow'>
 	  <div class='main'>
-	    <h3 class='inner-header hidden-xs'>Главное</h3>
+	    <h3 class='inner-header hidden-xs hidden-sm'>Главное</h3>
 		<div class='main-panel'>
 		  <div class='main-data'>
 		  <div>
@@ -41,65 +40,100 @@
 		    <div class='temperature-block'>
 		      <div class='temp inside'>
 			    <p class='where'>Дома</p>
-			    <p class='tempval'>+23</p>
+			    <span class='tempval'>+23</span>
 			  </div>
 			  <div class='temp outside'>
 			    <p  class='where'>За окном</p>
-			    <p class='tempval'>+19</p>
+			    <span class='tempval'>+19 <span><div class='drizzle'></div></span></span>
 			  </div>
 		    </div>
 		  </div>
-		  <div class='device-block'>
-			<div class='device-panel'>
-			  <div class='lighticon activescenario'></div>
-			  <div class='scenario-content'>
-			  <p class='device-name'>Xiaomi Yeelight LED Smart Bulb</p>
-			  <p class='device-state'>Включено</p>
+		  <div class='device-block' id='device-block'>
+			<div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon activescenario'></div>
+			    <div class='scenario-content'>
+			    <p class='device-name'>Xiaomi Yeelight LED Smart Bulb</p>
+			    <p class='device-state'>Включено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
 			  </div>
 			</div>
-			<div class='device-panel'>
-			  <div class='lighticon'></div>
-			  <div class='scenario-content'>
-			  <p  class='device-name'>D-Link Omna 180 Cam</p>
-			  <p  class='device-state'>Включится в 17:00</p>
+			<div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>D-Link Omna 180 Cam</p>
+			    <p  class='device-state'>Включится в 17:00</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
 			  </div>
 			</div>
-			<div class='device-panel'>
-			  <div class='tempicon'></div>
-			  <div class='scenario-content'>
-			  <p  class='device-name'>Elgato Eve Degree Connected</p>
-			  <p  class='device-state'>Включится до 17:00</p>
+			<div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='tempicon'></div>
+			    <div class='scenario-content'>
+			      <p  class='device-name'>Elgato Eve Degree Connected</p>
+			      <p  class='device-state'>Включится до 17:00</p>
+			    </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
 			  </div>
 			</div>
-			<div class='device-panel'>
-			  <div class='lighticon'></div>
-			  <div class='scenario-content'>
-			  <p  class='device-name'>LIFX Mini Day & Dusk A60 E27</p>
-			  <p  class='device-state'>Включится в 17:00</p>
+			<div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>LIFX Mini Day & Dusk A60 E27</p>
+			    <p  class='device-state'>Включится в 17:00</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
 			  </div>
 			</div>
-			<div class='device-panel'>
-			  <div class='lighticon activescenario'></div>
-			  <div class='scenario-content'>
-			  <p  class='device-name'>Xiaomi Mi Air Purifier 2S</p>
-			  <p  class='device-state'>Включено</p>
+			<div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon activescenario'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>Xiaomi Mi Air Purifier 2S</p>
+			    <p  class='device-state'>Включено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
 			  </div>
 			</div>
-			<div class='device-panel'>
-			  <div class='lighticon'></div>
-			  <div class='scenario-content'>
-			  <p  class='device-name'>Philips Zhirui</p>
-			  <p  class='device-state'>Выключено</p>
+			<div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>Philips Zhirui</p>
+			    <p  class='device-state'>Выключено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
 			  </div>
 			</div>
-			<div class='device-panel'>
-			  <div class='lighticon activescenario'></div>
-			  <div class='scenario-content'>
-			  <p  class='device-name'> Xiaomi</p>
-			  <p  class='device-state'>Включено</p>
+			<div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon activescenario'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'> Xiaomi</p>
+			    <p  class='device-state'>Включено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
 			  </div>
 			</div>
-			<span class='uparrow hidden-xs'>
+			<span class='uparrow forward-arrows-device-block hidden-xs hidden-sm'>
 			  <img alt='uparrow' src='css/images/up.png'> 
 			</span>
 		  </div>
@@ -109,36 +143,36 @@
 	  <div class='favscenarios'>
 	    <div class='scenarios-header'>
 	      <h3  class='inner-header'>Избранные сценарии</h3>
-		  <span class='arrows hidden-xs'><img alt='right' src='css/images/right.png'></span>
-		  <span class='arrows hidden-xs'><img alt='left' src='css/images/left.png'></span>
+		  <span class='arrows forward-arrows-scenarios hidden-xs hidden-sm'><img alt='right' src='css/images/right.png'></span>
+		  <span class='arrows back-arrows-scenarios hidden-xs hidden-sm'><img alt='left' src='css/images/left.png'></span>
 		</div>
-		<div class='scenarios'>
-		<div class='scenarios-panel'>
+		<div class='scenarios' id='scenarios'>
+		<div class='scenarios-children scenarios-panel'>
 		  <div class='lighticon activescenario'></div>
 		  <div class='scenario-content'>
 		    <p class='scenario-name'>Выключить весь свет в доме и во дворе</p>
 		  </div>	
 		</div>
-		<div class='scenarios-panel'>
+		<div class='scenarios-children scenarios-panel'>
 		  <div class='clockicon'></div>
 		  <div class='scenario-content'>
 		    <p class='scenario-name'>Я ухожу</p>
 		  </div>
 		</div>
-		<div class='scenarios-panel'>
+		<div class='scenarios-children scenarios-panel'>
 		  <div class='lighticon activescenario'></div>
 		  <div class='scenario-content'>
 		    <p class='scenario-name'>Включить свет в коридоре</p>
 		  </div>
 		</div>
-		<div class='scenarios-panel'>
+		<div class='scenarios-children scenarios-panel'>
 		  <div class='tempicon activescenario'></div>
 		  <div class='scenario-content'>
 		    <p class='scenario-name'>Набрать горячую ванную</p>
 		    <p class='scenario-state'>Начнется в 18:00</p>
 		  </div>
 		</div>
-		<div class='scenarios-panel'>
+		<div class='scenarios-children scenarios-panel'>
 		  <div class='tempicon activescenario'></div>
 		  <div class='scenario-content'>
 		    <p class='scenario-name'>Сделать пол теплым во всей квартире</p>
@@ -155,60 +189,95 @@
 		<div class='devicelink'><a class='devicecategory'>Зал</a></div>
 		<div class='devicelink'><a class='devicecategory'>Лампочки</a></div>
 		<div class='devicelink'><a class='devicecategory'>Камеры</a></div>
-		<span class='arrows hidden-xs'><img alt='right' src='css/images/right.png'></span>
-		<span class='arrows hidden-xs'><img alt='left' src='css/images/left.png'></span>
+		<span class='arrows forward-arrows-devices hidden-xs hidden-sm'><img alt='right' src='css/images/right.png'></span>
+		<span class='arrows back-arrows-devices hidden-xs hidden-sm'><img alt='left' src='css/images/left.png'></span>
       </div>
 	</div>
-	<div class='myrow devices'>
-		<div class='device-panel'>
-		  <div class='lighticon activescenario'></div>
-		  <div class='scenario-content'>
-		  <p class='device-name'>Xiaomi Yeelight LED Smart Bulb</p>
-		  <p class='device-state'>Включено</p>
-		  </div>
-		</div>
-		<div class='device-panel'>
-		  <div class='lighticon'></div>
-		  <div class='scenario-content'>
-		  <p  class='device-name'>D-Link Omna 180 Cam</p>
-		  <p  class='device-state'>Включится в 17:00</p>
-		  </div>
-		</div>
-		<div class='device-panel'>
-		  <div class='tempicon'></div>
-		  <div class='scenario-content'>
-		  <p  class='device-name'>Elgato Eve Degree Connected</p>
-		  <p  class='device-state'>Включится до 17:00</p>
-		  </div>
-		</div>
-		<div class='device-panel'>
-		  <div class='lighticon'></div>
-		  <div class='scenario-content'>
-		  <p  class='device-name'>LIFX Mini Day & Dusk A60 E27</p>
-		  <p  class='device-state'>Включится в 17:00</p>
-		  </div>
-		</div>
-		<div class='device-panel'>
-		  <div class='lighticon activescenario'></div>
-		  <div class='scenario-content'>
-		  <p  class='device-name'>Xiaomi Mi Air Purifier 2S</p>
-		  <p  class='device-state'>Включено</p>
-		  </div>
-		</div>
-		<div class='device-panel'>
-		  <div class='lighticon'></div>
-		  <div class='scenario-content'>
-		  <p  class='device-name'>Philips Zhirui</p>
-		  <p  class='device-state'>Выключено</p>
-		  </div>
-		</div>
-		<div class='device-panel'>
-		  <div class='lighticon activescenario'></div>
-		  <div class='scenario-content'>
-		  <p  class='device-name'> Xiaomi</p>
-		  <p  class='device-state'>Включено</p>
-		  </div>
-		</div>
+	<div class='myrow devices' id='devices'>
+		    <div class='device-block-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon activescenario'></div>
+			    <div class='scenario-content'>
+			    <p class='device-name'>Xiaomi Yeelight LED Smart Bulb</p>
+			    <p class='device-state'>Включено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
+			  </div>
+			</div>
+			<div class='devices-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>D-Link Omna 180 Cam</p>
+			    <p  class='device-state'>Включится в 17:00</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
+			  </div>
+			</div>
+			<div class='devices-children device-panel'>
+			  <div class='smallview'>
+			    <div class='tempicon'></div>
+			    <div class='scenario-content'>
+			      <p  class='device-name'>Elgato Eve Degree Connected</p>
+			      <p  class='device-state'>Включится до 17:00</p>
+			    </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
+			  </div>
+			</div>
+			<div class='devices-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>LIFX Mini Day & Dusk A60 E27</p>
+			    <p  class='device-state'>Включится в 17:00</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
+			  </div>
+			</div>
+			<div class='devices-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon activescenario'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>Xiaomi Mi Air Purifier 2S</p>
+			    <p  class='device-state'>Включено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
+			  </div>
+			</div>
+			<div class='devices-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'>Philips Zhirui</p>
+			    <p  class='device-state'>Выключено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
+			  </div>
+			</div>
+			<div class='devices-children device-panel'>
+			  <div class='smallview'>
+			    <div class='lighticon activescenario'></div>
+			    <div class='scenario-content'>
+			    <p  class='device-name'> Xiaomi</p>
+			    <p  class='device-state'>Включено</p>
+			  </div>
+			  </div>
+			  <div class='popupview hidden'>
+			    
+			  </div>
+			</div>
 	</div>
     </div>
 	<footer>
