@@ -174,7 +174,7 @@ ul.nav.navbar-nav {
 	display: flex;
 	flex-direction: column;
 	overflow-y: hidden;
-	height: 300px;
+	height:305px;
 	position:relative;
 }
 
@@ -340,6 +340,7 @@ ul.nav.navbar-nav {
 	min-height:30px;
 	text-align: center;
 	margin-right:15px;
+	padding:5px;
 }
 
 .chosen {
@@ -390,12 +391,88 @@ ul.nav.navbar-nav {
 }
 
 .popup-device-panel {
+	height:238px;
 	position:fixed;
 	top:100px;
 	left:30%;
 	width:630px;
 	margin-top:100px;
 	z-index:100;
+}
+
+.popupview {
+	padding: 26px 25px 25px 25px;
+}
+
+.popupHeader {
+	font-size: 27px;
+	color: #333333;
+}
+
+.popupState {
+	font-family: ArialMT;
+	font-size: 14px;
+	color: #333333;
+}
+
+.popupIcon {
+	min-width:35px;
+	min-height:35px;
+	position:absolute;
+	right:36.4px;
+	top:36.4px;
+}
+
+.popupButtonPanel {
+	margin-top:20px;
+}
+
+.popupButton {
+	font-family: Arial-BoldMT;
+	font-size: 13px;
+	color: #000000;
+	text-align: left;
+	margin-right: 35px;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px;
+	background-color:#F2F1F0;
+	padding:8px;
+}
+.activeButton {
+	background-color:#FFD93E;
+}
+.popupControls {
+	position:absolute;
+	bottom: -85px;
+	left:0;
+	min-width:630px;
+	display: -webkit-flex; 
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.controlButton {
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px;
+	font-size: 18px;
+	color: #000000;
+	letter-spacing: 0;
+	text-align: center;
+	min-width:307px;
+	padding: 21px 92px 20px 92px;
+}
+
+.applyControls {
+	background-color:#FFD93E;
+	margin-right:16px;
+}
+
+.closeControls {
+	background-color:#FFFFFF;
 }
 
 .device-name, .scenario-name {
