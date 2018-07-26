@@ -1,6 +1,71 @@
-@media screen and (max-width: 1320px) {
-	.favscenarios {
-		width:300px;
+@media screen and (max-width: 1170px) {
+	.content {
+		padding:30px 20px 0 20px;
+	}
+	.mynavbar {
+		border-bottom-color: white;
 	}
 
+	.firstrow {
+		display:block
+	}
+		
+	.main-panel {
+		width:100% !important;
+		height:282px;
+		background-size:auto;
+		padding-right:0;
+		-moz-border-radius: 20px; 
+		-webkit-border-radius: 20px; 
+		border-radius: 20px;
+	}
+	
+	.main-data {
+		display: -webkit-flex; 
+		-webkit-flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+	.greeting{
+		font-size: 18px;
+	}
+
+	.general-info {
+		font-size: 12px;
+	}
+	
+	.where {
+		font-size: 12px;
+	}
+		
+	.tempval {
+		font-size: 24px;
+	}
+	
+	.device-block {
+		display: -webkit-flex; 
+		-webkit-flex-direction: row;
+		display: flex;
+		flex-direction: row;
+		overflow-x: hidden;
+		height: 300px;
+		position:relative;
+	}
+	
+	.favscenarios {
+		margin-top: 31px;
+	}
+	
+	.scenarios {	
+		display: -webkit-flex;
+		-webkit-flex-wrap: nowrap; 
+		display:flex;
+		flex-wrap: nowrap;
+	}
+	
+	footer {
+		position: relative;
+	}
 }

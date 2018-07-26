@@ -27,6 +27,7 @@ body {
 	background-color: white;
 	vertical-align:center;
 }
+
 .mynavbar {
 	background-color: white !important;
 	padding: 0;
@@ -72,8 +73,16 @@ ul.nav.navbar-nav {
 	padding:30px 40px 0 40px;
 }
 
-.row {
+.myrow{
 	margin:0;
+}
+
+.firstrow {
+	display: -webkit-flex; 
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .inner-header {
@@ -153,6 +162,8 @@ ul.nav.navbar-nav {
 
 .favscenarios {
 	max-height:350px;
+	overflow-y:hidden;
+	margin-left:26px;
 }
 
 .arrows {
@@ -172,6 +183,7 @@ ul.nav.navbar-nav {
 	display:flex;
 	flex-wrap: wrap;
 	overflow-x: hidden;
+	overflow-y: hidden;
 	max-height:350px;
 	margin-top:20px;
 }
