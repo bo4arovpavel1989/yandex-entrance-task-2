@@ -178,9 +178,10 @@
 	}
 	
 	class NavbarCollapser {
-		constructor(selector, navbarSelector){
+		constructor(selector,  menuSelector, navbarSelector){
 			this.selector = selector;
 			this.navbarSelector = navbarSelector;
+			this.menuSelector = menuSelector;
 			
 			this.listenToMenu();
 		}
@@ -190,7 +191,8 @@
 		}
 		
 		handleMenuShowing(){
-			document.querySelector(`#${this.navbarSelector}`).classList.toggle('hidden-mobile');
+			document.querySelector(`#${this.menuSelector}`).classList.toggle('hidden-mobile');
+			document.querySelector(`.${this.navbarSelector}`).classList.toggle('opened-menu');
 		}
 	}
 	
@@ -198,5 +200,5 @@
 	let scenariosScroller = new Scroller('scenarios', 3, 200, 15);
 	let deiceBlockScroller = new InfiniteScroller('device-block', 'device-panel');
 	let devicePopup = new DevicePopup('device-panel');
-	let navbarCollapser = new NavbarCollapser('home-navbar-button', 'menu-mobile');
+	let navbarCollapser = new NavbarCollapser('home-navbar-button', 'menu-mobile', 'home-navbar');
 })();
