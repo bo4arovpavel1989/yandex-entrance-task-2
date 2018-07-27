@@ -119,6 +119,79 @@
 		display:none;
 	}
 	
+	
+	.popup-device-panel {
+		height:492px;
+		width:334px;
+		position:fixed;
+		top:-81px;
+		left:5.6%;
+		z-index:100;
+	}
+	
+	.popupview {
+		padding: 21px 0 20px 20px;
+	}
+
+	.popupHeader {
+		font-size: 18px;
+	}
+
+	.popupState {
+		font-size: 12px;
+	}
+
+	.popupIcon {
+		display:none;
+	}
+
+	.popupButtonPanel {
+		margin-top:15px;
+		white-space:nowrap;
+		padding-top:10px;
+		height:45px;
+		overflow-x:auto;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+
+	.popupButtonPanel::-webkit-scrollbar {
+		display:none;
+	}
+	
+	.popupButton {
+		font-size: 13px;
+		margin-right: 10px;
+		height:30px;
+		padding:13px;
+	}
+	.activeButton {
+		background-color:#FFD93E;
+	}
+	.popupControls {
+		position:absolute;
+		bottom: -150px;
+		left:0;
+		min-width:334px;
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.controlButton {
+		-moz-border-radius: 20px; 
+		-webkit-border-radius: 20px; 
+		border-radius: 20px;
+		font-size: 18px;
+		color: #000000;
+		letter-spacing: 0;
+		text-align: center;
+		width:334px;
+		height:60px;
+		padding: 21px 92px 20px 92px;
+	}
+
+	.closeControls {
+		margin-top:15px;
+	}
 	footer {
 		position: relative;
 	}
