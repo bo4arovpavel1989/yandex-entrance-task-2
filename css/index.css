@@ -137,6 +137,7 @@ ul.nav.navbar-nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	position:relative;
 }
 
 .temp {
@@ -180,8 +181,8 @@ ul.nav.navbar-nav {
 
 .uparrow {
 	position: absolute;
-	top: 270px;
-	left:90px;
+	bottom: 12px;
+	right:114px;
 	cursor:pointer;
 }
 
@@ -208,7 +209,7 @@ ul.nav.navbar-nav {
 }
 
 .hiddenByScroll {
-	display:none !important;
+    animation: driveaway 0.2s linear;
 }
 
 @keyframes driveaway {
@@ -218,7 +219,7 @@ ul.nav.navbar-nav {
 	}
     100% { 
 		opacity: 0.1;
-		margin-left:-10px;
+		margin-left:-200px;
 	}
 }
 

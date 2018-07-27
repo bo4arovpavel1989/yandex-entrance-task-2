@@ -20,7 +20,8 @@
 			let sum = 0;
 			
 			children.forEach(child => {
-				sum += child.offsetWidth + this.margin;
+				if(child.offsetWidth > 0)
+					sum += child.offsetWidth + this.margin;
 			})
 			
 			this.isOverflow = (totalWidth < (sum / this.rows))
@@ -57,15 +58,19 @@
 		}
 		
 		handleScrollForward(){
-			if(!this.isListenerForward)
+			if(!this.isListenerForward) //add listener once
 				document.querySelector(`.forward-arrows-${this.selector}.active-arrow`).addEventListener('click',(e)=>{
 					this.isListenerForward = true;
 					this.listenToOverflow();
 					
 					if(this.isOverflow) {
-						document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0].classList.add('hiddenByScroll');
-						document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0].classList.add(`${this.selector}-children-hidden`);
-						document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0].classList.remove(`${this.selector}-children`);
+						let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0];
+						element.classList.add('hiddenByScroll');
+						setTimeout(()=>{
+							element.classList.add(`${this.selector}-children-hidden`);
+							element.classList.add(`hidden`);
+							element.classList.remove(`${this.selector}-children`);
+						}, 100);
 						
 						if(!document.querySelector(`.back-arrows-${this.selector}`).classList.contains('active-arrow')) {
 							document.querySelector(`.back-arrows-${this.selector}`).classList.add('active-arrow');
@@ -76,7 +81,7 @@
 		}
 		
 		handleScrollBack(){
-			if(!this.isListenerBack)
+			if(!this.isListenerBack) //add listener once
 				document.querySelector(`.back-arrows-${this.selector}.active-arrow`).addEventListener('click',(e)=>{
 					this.isListenerBack = true;
 					this.listenToOverflow();
@@ -84,15 +89,50 @@
 					let hq = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`).length;
 					
 					if(hq > 0) {
-						document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1].classList.remove('hiddenByScroll');
-						document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1].classList.add(`${this.selector}-children`);
-						document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1].classList.remove(`${this.selector}-children-hidden`);
+						let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1];
+						element.classList.remove('hiddenByScroll');
+						element.classList.remove('hidden');
+						element.classList.add(`${this.selector}-children`);
+						element.classList.remove(`${this.selector}-children-hidden`);
 					}
 					
 					if(hq === 1)
 						document.querySelector(`.back-arrows-${this.selector}.active-arrow`).classList.remove('active-arrow');
 					
 				})
+		}
+		
+	}
+	
+	class InfiniteScroller {
+		constructor(selector, styleClass){
+			this.selector = selector;
+			this.styleClass = styleClass;
+			this.length;
+			
+			this.addClickListener();
+			this.setLength();
+		}
+		
+		addClickListener(){
+			document.querySelector(`.infinite-arrow-${this.selector}`).addEventListener('click', this.handleScroll.bind(this));
+		}
+		
+		setLength(){
+			this.length = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`).length;
+		}
+		
+		handleScroll(){
+			let parentNode =  document.getElementById(this.selector);
+			let children = parentNode.getElementsByClassName(`${this.selector}-children`);
+			let scrollBlock = children[0];
+			let scrollBlockHTML = scrollBlock.innerHTML;
+			let newBlock = document.createElement('div');
+			newBlock.className = `${this.selector}-children ${this.styleClass}`;
+			let oldBlock = parentNode.getElementsByClassName(`${this.selector}-children`)[0];
+			oldBlock.parentNode.removeChild(oldBlock);
+			parentNode.appendChild(newBlock);
+			parentNode.getElementsByClassName(`${this.selector}-children`)[this.length - 1].innerHTML =  scrollBlockHTML;
 		}
 		
 	}
@@ -139,6 +179,6 @@
 	
 	let deviceScroller = new Scroller('devices', 1, 200, 15);
 	let scenariosScroller = new Scroller('scenarios', 3, 200, 15);
-	let dbScroller = new Scroller('device-block', 1, 200);
+	let deiceBlockScroller = new InfiniteScroller('device-block', 'device-panel');
 	let devicePopup = new DevicePopup('device-panel');
 })();
