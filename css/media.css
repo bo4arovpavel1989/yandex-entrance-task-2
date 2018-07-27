@@ -1,10 +1,7 @@
 @media screen and (max-width: 978px) {
 	.content {
 		padding:0 20px 0 20px;
-	}
-	
-	.navbar-toggle.collapsed{
-		border-style: none;
+		margin-top:64px;
 	}
 	
 	.icon-menu {	
@@ -16,17 +13,37 @@
 		background-size:contain;
 	}
 	
-	nav.navbar.navbar-default {
+	.home-navbar{
 		border-style: none;
-		padding-bottom:13px;
+		height:51px;
+		padding:12px 20px 14px 20px;
 	}
 	
-	.mynavbar {
-		border-style: none;
-		padding-right:20px;
-		padding-bottom:0;
+	.opened-menu {
+		
 	}
-
+	
+	.home-navbar-button {
+		position:absolute;
+		right:20px;
+		top:24.3px;
+		cursor:pointer;
+	}	
+	
+	.hidden-mobile {
+		display:none;
+	}
+	
+	.home-navbar-menu {
+		display: -webkit-flex; 
+		-webkit-flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-top:5px;
+		background-color:white;
+	}
+	
 	.firstrow {
 		display: -webkit-flex; 
 		-webkit-flex-direction: column;
@@ -110,6 +127,33 @@
 		
 	}
 	
+	.devicelinkToggler {
+		display: -webkit-flex; 
+		-webkit-flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+	.hiddenDevicelink {
+		display:none;
+	}
+	
+	.devicelink {
+		padding-right:20px;
+	}
+	
+	.downicon {
+		position:absolute;
+		bottom:10px;
+		right:20px;
+		display:inline-block;
+		min-width: 10px !important;
+		min-height:7px !important;
+		background:url('images/down.png') no-repeat;
+		background-size:contain;
+	}
+	
 	.devices {
 		overflow-x: auto;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -126,7 +170,7 @@
 		position:fixed;
 		top:-81px;
 		left:5.6%;
-		z-index:100;
+		z-index:2500;
 	}
 	
 	.popupview {
@@ -194,5 +238,13 @@
 	}
 	footer {
 		position: relative;
+	}
+	
+	.footerlink {
+		margin-right:10px;
+	}
+	
+	.copyright {
+		margin-left:0;
 	}
 }

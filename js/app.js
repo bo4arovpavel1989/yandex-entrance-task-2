@@ -177,8 +177,26 @@
 		}
 	}
 	
+	class NavbarCollapser {
+		constructor(selector, navbarSelector){
+			this.selector = selector;
+			this.navbarSelector = navbarSelector;
+			
+			this.listenToMenu();
+		}
+		
+		listenToMenu(){
+			document.querySelector(`.${this.selector}`).addEventListener('click', this.handleMenuShowing.bind(this));
+		}
+		
+		handleMenuShowing(){
+			document.querySelector(`#${this.navbarSelector}`).classList.toggle('hidden-mobile');
+		}
+	}
+	
 	let deviceScroller = new Scroller('devices', 1, 200, 15);
 	let scenariosScroller = new Scroller('scenarios', 3, 200, 15);
 	let deiceBlockScroller = new InfiniteScroller('device-block', 'device-panel');
 	let devicePopup = new DevicePopup('device-panel');
+	let navbarCollapser = new NavbarCollapser('home-navbar-button', 'menu-mobile');
 })();

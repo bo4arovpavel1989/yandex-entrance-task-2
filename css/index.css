@@ -14,59 +14,75 @@
 
 body {
 	font-family: Arial-BoldMT;
+	margin:0;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	
 }
 
 .blur {
-	height:100%;
+	top:0;
+	bottom:0;
+	height:2500px;
 	width:100%;
 	position:absolute;
 	background-color:black;
 	opacity:0.5;
-	z-index:100;
+	z-index:2000;
 }
 
 .hidden {
 	display:none;
 }
 
-.mycontainer {
-	padding-left: 0;
-	padding-right: 0;
-}
-.navbar{
+.home-navbar{
+	z-index:1000;
+	display: -webkit-flex; 
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
 	height:92px;
+	position:fixed;
+	top:0;
 	margin: 0;
-	padding: 16px 0 33px 40px;
+	padding: 32px 0 33px 40px;
 	background-color: white;
 	vertical-align:center;
-}
-
-.mynavbar {
-	background-color: white !important;
-	padding: 0;
-	margin:0;
-	padding-left:20px;
+    border-bottom-style: solid;
 	border-bottom-color: #F0F0F0;
 	border-bottom-width: 1px;
+	width:100%;
 }
 
-.navbar-brand {
+.home-navbar-header {
+	height:27px;
+	width:108px;
+	margin-right:52px;
+}
+
+.home-navbar-brand {
 	margin-top:8px;
 	height:27px;
 	width:108px;
-	background:url('images/brand2.png') no-repeat;
 	background-position:left;
 	background-size:contain;
 }
 
-#bs-collapse-1{
-	margin:0;
-	padding:0;
+.home-navbar-menu {
+	display: -webkit-flex; 
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top:5px;
 }
-ul.nav.navbar-nav {
-	padding-left:52px;
-}
-.nav-btn {
+
+.home-nav-btn {
 	font-size: 16px;
 	color: #333333 !important;
 	line-height: 20px !important;
@@ -84,6 +100,8 @@ ul.nav.navbar-nav {
 
 .content {
 	padding:30px 40px 0 40px;
+	margin-top:92px;
+	position:relative;
 }
 
 .myrow{
@@ -336,12 +354,29 @@ ul.nav.navbar-nav {
 	height:30px;
 }
 
+.devicelinkPanel {
+	display:inline-block;
+	position:relative;
+}
+
+.devicelinkToggler {
+	display: -webkit-flex; 
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
 .devicelink {
 	display:inline-block;
 	min-height:30px;
 	text-align: center;
 	margin-right:15px;
 	padding:5px;
+}
+
+.downicon {
+	display:none;
 }
 
 .chosen {
@@ -363,6 +398,7 @@ ul.nav.navbar-nav {
 	display:flex;
 	flex-wrap: nowrap;
 	overflow-x: hidden;
+	overflow-y:hidden;
 	max-height:350px;
 	margin-top:5px;
 }
@@ -398,7 +434,7 @@ ul.nav.navbar-nav {
 	left:30%;
 	width:630px;
 	margin-top:100px;
-	z-index:100;
+	z-index:2500;
 }
 
 .popupview {

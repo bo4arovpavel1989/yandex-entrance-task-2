@@ -9,26 +9,22 @@
   </head>
   <body>
   <div class='blur hidden'></div>
-	<nav class="navbar navbar-default">
-      <div class="container-fluid mynavbar">
-        <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-menu"></span>
-        </button>
-          <a class="navbar-brand" href="#">
-          </a>
+	<div class='home-navbar'>
+        <div class="home-navbar-header">
+          <a class="home-navbar-brand" href="#"><img src='css/images/brand1.png' alt='brand'/></a>
         </div>
-		<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a class='nav-btn active' href="#">Сводка</a></li>
-            <li><a class='nav-btn' href="#">Устройства</a></li>
-            <li><a class='nav-btn' href="#">Сценарии</a></li>
-		  </ul>
-		<div>  
-      </div>
-    </nav>
-    <div class='container-fluid content'>
+		<span class='hidden-mobile' id='menu-mobile'>
+		<div class='home-navbar-menu'>
+            <a class='home-nav-btn active' href="#">Сводка</a>
+            <a class='home-nav-btn' href="#">Устройства</a>
+            <a class='home-nav-btn' href="#">Сценарии</a>
+		</div>
+		</span>
+		<div class='home-navbar-button'>
+          <span class="icon-menu"></span>
+		</div>
+	</div>
+    <div class='content'>
 	<div class='myrow firstrow'>
 	  <div class='main'>
 	    <h3 class='inner-header hidden-xs hidden-sm'>Главное</h3>
@@ -288,11 +284,16 @@
 	<div class='myrow devices-header'>
 	  <div>
 	    <h3  class='inner-header deviceheader'>Избранные устройства</h3>
-		<div class='devicelink chosen'><a class='devicecategory'>Все</a></div>
-		<div class='devicelink'><a class='devicecategory'>Кухня</a></div>
-		<div class='devicelink'><a class='devicecategory'>Зал</a></div>
-		<div class='devicelink'><a class='devicecategory'>Лампочки</a></div>
-		<div class='devicelink'><a class='devicecategory'>Камеры</a></div>
+		<div class='devicelinkPanel'>
+		  <div class='downicon'></div>
+		  <div class='devicelinkToggler'>
+		    <div class='devicelink chosen'><a class='devicecategory'>Все</a></div>
+		    <div class='hiddenDevicelink devicelink'><a class='devicecategory'>Кухня</a></div>
+		    <div class='hiddenDevicelink devicelink'><a class='devicecategory'>Зал</a></div>
+		    <div class='hiddenDevicelink devicelink'><a class='devicecategory'>Лампочки</a></div>
+		    <div class='hiddenDevicelink devicelink'><a class='devicecategory'>Камеры</a></div>
+		  </div>
+		</div>
 		<span class='arrows forward-arrows-devices hidden-xs hidden-sm'><img alt='right' src='css/images/right.png'></span>
 		<span class='arrows back-arrows-devices hidden-xs hidden-sm'><img alt='left' src='css/images/left.png'></span>
       </div>
