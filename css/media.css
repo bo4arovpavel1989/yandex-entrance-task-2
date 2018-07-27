@@ -142,6 +142,7 @@
 	
 	.devicelink {
 		padding-right:20px;
+		cursor:pointer;
 	}
 	
 	.downicon {

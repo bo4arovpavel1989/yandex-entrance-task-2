@@ -196,9 +196,46 @@
 		}
 	}
 	
+	class DeviceLinkToggler {
+		constructor(selector){
+			this.selector = selector;
+			this.state = {opened:false}
+			
+			this.listenToClick();
+		}
+				
+		listenToClick(){
+			document.querySelector(`.${this.selector}`).addEventListener('click', this.handleClick.bind(this));
+		}
+		
+		handleClick(e) {
+			console.log(e);
+			let links = document.getElementsByClassName(`${this.selector}`);
+			if(!this.state.opened) {
+				this.state.opened = true;
+				for (let el in links) {
+					try{
+						links[el].parentElement.classList.remove('hiddenDevicelink');
+					} catch(e) {
+						console.log(e)
+					}
+				}
+			} else {
+				for (let el in links) {
+					try{
+						links[el].classList.add('hiddenDevicelink');
+					} catch(e) {
+						console.log(e)
+					}
+				}
+			}
+		}
+	}
+	
 	let deviceScroller = new Scroller('devices', 1, 200, 15);
 	let scenariosScroller = new Scroller('scenarios', 3, 200, 15);
 	let deiceBlockScroller = new InfiniteScroller('device-block', 'device-panel');
 	let devicePopup = new DevicePopup('device-panel');
 	let navbarCollapser = new NavbarCollapser('home-navbar-button', 'menu-mobile', 'home-navbar');
+	let deviceLinkToggler = new DeviceLinkToggler('devicecategory')
 })();
