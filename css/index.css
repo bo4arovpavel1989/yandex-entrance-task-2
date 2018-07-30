@@ -17,12 +17,8 @@ body {
 	margin:0;
 }
 
-a {
+a, a:hover {
 	text-decoration: none;
-}
-
-ul {
-	
 }
 
 .blur {
@@ -31,8 +27,7 @@ ul {
 	height:2500px;
 	width:100%;
 	position:absolute;
-	background-color:black;
-	opacity:0.5;
+	background: rgba(51,51,51,0.50);
 	z-index:2000;
 }
 
@@ -469,6 +464,11 @@ ul {
 	width:630px;
 	margin-top:100px;
 	z-index:2500;
+	background-color:#FFFFFF;
+}
+
+.popup-device-panel.high-panel {
+	height:367px;
 }
 
 .popupview {
@@ -500,7 +500,7 @@ ul {
 	min-width:35px;
 	min-height:35px;
 	position:absolute;
-	right:13.6px;
+	right:25px;
 	top:25px;
 }
 
@@ -517,8 +517,8 @@ ul {
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
-	background-color:#F2F1F0;
-	padding:8px;
+	background-color:#F2F1F0;   
+	padding: 7px 15px 8px 7px;
 }
 
 .activeButton {
@@ -532,6 +532,65 @@ ul {
 	border-radius: 30px;
 	width:580px;
 	height:60px;
+}
+
+
+.popup-oval{
+	margin-top: 20px;
+	margin-left:182px;
+	position:relative;
+	width:221px;
+	height:221px;
+}
+
+.oval-el  {
+	position:absolute;
+}
+
+.main-oval {
+	width:221px;
+	height:221px;
+	background:url('images/oval.png') no-repeat;
+	background-position:left;
+	background-size:contain
+}
+
+.arrow-in-oval {
+	top: 125px;
+    right: 33px;
+	border: 5px solid transparent; 
+	border-right: 5px solid  #333333;
+	border-bottom: 5px solid  #333333; 
+	transform: rotate(-30deg);
+}
+
+.rest-oval {
+	width:65px;
+	height:77px;
+	background:url('images/oval-black.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+	bottom:12.7px;
+	right:1.9px;
+}
+
+.background-oval {
+	width:178px;
+	height:178px;
+	top:22px;
+	right:22px;
+	background:url('images/oval-bg.png') no-repeat;
+	background-position:left;
+	background-size:contain
+}
+
+.temp-in-oval {
+	font-size: 66px;
+	color: #333333;
+	letter-spacing: 0;
+	text-align: left;
+	top:63px;
+	left:56px;
 }
 
 .tempSlider {

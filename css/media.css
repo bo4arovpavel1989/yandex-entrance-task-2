@@ -171,7 +171,7 @@
 	}
 	
 	
-	.popup-device-panel {
+	.popup-device-panel, .popup-device-panel.high-panel {
 		height:492px;
 		width:334px;
 		position:fixed;
@@ -198,6 +198,7 @@
 
 	.popupButtonPanel {
 		margin-top:15px;
+		padding-top: 5px;
 		white-space:nowrap;
 		height:30px;
 		overflow-x:auto;
@@ -225,11 +226,21 @@
 		height:336px;
 	}
 
+	.popup-oval{
+		margin-top: 103px;
+		margin-left:37px;
+	}
+
 	.tempSlider {
 		background: linear-gradient(0deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
 		position:relative;
 	}
-
+	
+	.lightSlider {
+		background: linear-gradient(0deg, #FFE682 2%, #FF9E00 98%);
+		position:relative;
+	}
+	
 	.tempSliderMinValue, .lightSliderMinValue {
 		top:301px;
 		left:18px;
@@ -275,6 +286,7 @@
 	.closeControls {
 		margin-top:15px;
 	}
+	
 	footer {
 		position: relative;
 	}

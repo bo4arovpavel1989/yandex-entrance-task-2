@@ -1,4 +1,4 @@
-(function(){
+(function(){	
 	class Scroller {
 		constructor(selector, rows, blockWidth, margin){
 			this.selector = selector;
@@ -103,6 +103,45 @@
 		}
 		
 	}
+		
+	class DevicePopup {
+		constructor(selector){
+			this.selector = selector;
+			
+			this.addClickListener();
+			this.addCloseListener();
+		}
+		
+		addClickListener(){
+			let listener = function(e) {
+					if(!e.target.classList.contains('controlButton')) {
+						this.classList.add('popup-device-panel');
+						this.getElementsByClassName('smallview')[0].classList.add('hidden');
+						this.getElementsByClassName('popupview')[0].classList.remove('hidden');
+						document.querySelector('.blur').classList.remove('hidden');
+						e.target.removeEventListener('click', listener, false);
+					}
+			}
+			
+			
+			document.querySelectorAll(`.${this.selector}`).forEach((el) => {
+				if(!el.classList.contains('hasPopupListener'))
+					el.addEventListener('click', listener, false);
+				el.classList.add('hasPopupListener');
+			})
+		}
+		
+		addCloseListener() {
+			document.querySelectorAll(`.controlButton`).forEach(el => {
+				el.addEventListener('click', function (e) {
+					document.querySelector('.blur').classList.add('hidden');
+					this.parentElement.parentElement.classList.add('hidden');
+					this.parentElement.parentElement.previousElementSibling.classList.remove('hidden');
+					this.parentElement.parentElement.parentElement.classList.remove('popup-device-panel');
+				})
+			})
+		}
+	}
 	
 	class InfiniteScroller {
 		constructor(selector, styleClass){
@@ -126,55 +165,19 @@
 			let parentNode =  document.getElementById(this.selector);
 			let children = parentNode.getElementsByClassName(`${this.selector}-children`);
 			let scrollBlock = children[0];
+			let highPanel = '';
+			if (scrollBlock.classList.contains('high-panel')) //check if removed block is high-panel popup block
+				highPanel = 'high-panel';
 			let scrollBlockHTML = scrollBlock.innerHTML;
 			let newBlock = document.createElement('div');
-			newBlock.className = `${this.selector}-children ${this.styleClass}`;
+			newBlock.className = `${this.selector}-children ${this.styleClass} ${highPanel}`;
 			let oldBlock = parentNode.getElementsByClassName(`${this.selector}-children`)[0];
 			oldBlock.parentNode.removeChild(oldBlock);
 			parentNode.appendChild(newBlock);
 			parentNode.getElementsByClassName(`${this.selector}-children`)[this.length - 1].innerHTML =  scrollBlockHTML;
+			let newPopup = new DevicePopup('device-panel');
 		}
 		
-	}
-	
-	class DevicePopup {
-		constructor(selector){
-			this.selector = selector;
-			
-			this.addClickListener();
-			this.addCloseListener();
-		}
-		
-		addClickListener(){
-			let self = this;
-			
-			let listener = function(e) {
-					if(!e.target.classList.contains('controlButton')) {
-						this.classList.add('popup-device-panel');
-						this.getElementsByClassName('smallview')[0].classList.add('hidden');
-						this.getElementsByClassName('popupview')[0].classList.remove('hidden');
-						document.querySelector('.blur').classList.remove('hidden');
-						e.target.removeEventListener('click', listener, false);
-					}
-			}
-			
-			
-			document.querySelectorAll(`.${this.selector}`).forEach((el) => {
-				el.addEventListener('click', listener, false);
-			})
-		}
-		
-		addCloseListener() {
-			document.querySelectorAll(`.controlButton`).forEach(el => {
-				el.addEventListener('click', function (e) {
-					document.querySelector('.blur').classList.add('hidden');
-					this.parentElement.parentElement.classList.add('hidden');
-					this.parentElement.parentElement.previousElementSibling.classList.remove('hidden');
-					this.parentElement.parentElement.parentElement.classList.remove('popup-device-panel');
-					self.isPoped = false;
-				})
-			})
-		}
 	}
 	
 	class NavbarCollapser {
