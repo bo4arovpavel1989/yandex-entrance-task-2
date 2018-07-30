@@ -208,7 +208,6 @@
 			let links = document.getElementsByClassName(this.selector);
 			for (let el of links) {
 				try{
-					console.log(el);
 					el.addEventListener('click', this.handleClick.bind(this));
 				} catch(e) {
 					console.log(e)
@@ -221,8 +220,6 @@
 			
 			if (!window.matchMedia("(max-width: 978px)").matches)
 				this.state.opened = true;	
-			
-			console.log(window.matchMedia("(max-width: 978px)").matches)
 			
 			if(!this.state.opened) {
 				this.state.opened = true;

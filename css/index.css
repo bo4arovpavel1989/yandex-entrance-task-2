@@ -275,17 +275,27 @@ ul {
 }
 
 .tempicon {
-	min-width: 24px !important;
-	min-height:24px !important;
+	min-width: 24px;
+	min-height:24px;
 	background:url('images/tempoff.png') no-repeat;
 	background-position:left;
 	background-size:contain;
+}
+
+.tempicon.popupIcon {
+	min-width: 48px;
+	min-height:48px;
+	background:url('images/tempoff2.png') no-repeat;
 }
 
 .tempicon.activescenario {
 	background:url('images/tempon.png') no-repeat;
 	background-position:left;
 	background-size:contain;
+}
+
+.tempicon.popupIcon.activescenario{
+	background:url('images/tempon2.png') no-repeat;
 }
 
 .lighticon {
@@ -296,10 +306,20 @@ ul {
 	background-size:contain;
 }
 
+.lighticon.popupIcon {
+	min-width: 48px;
+	min-height:48px;
+	background:url('images/lightoff2.png') no-repeat;
+}
+
 .lighticon.activescenario {
 	background:url('images/lighton.png') no-repeat;
 	background-position:left;
 	background-size:contain;
+}
+
+.lighticon.popupIcon.activescenario {
+	background:url('images/lighton2.png') no-repeat;
 }
 
 .clockicon{
@@ -466,12 +486,22 @@ ul {
 	color: #333333;
 }
 
+.popupTempValue {
+	position:absolute;
+	right:68px;
+	top:26px;
+	font-size: 36px;
+	color: #333333;
+	letter-spacing: 0;
+	text-align: left;
+}
+
 .popupIcon {
 	min-width:35px;
 	min-height:35px;
 	position:absolute;
-	right:36.4px;
-	top:36.4px;
+	right:13.6px;
+	top:25px;
 }
 
 .popupButtonPanel {
@@ -490,9 +520,90 @@ ul {
 	background-color:#F2F1F0;
 	padding:8px;
 }
+
 .activeButton {
 	background-color:#FFD93E;
 }
+
+.popupSlider {
+	margin-top: 25px;
+	-moz-border-radius: 30px; 
+	-webkit-border-radius: 30px; 
+	border-radius: 30px;
+	width:580px;
+	height:60px;
+}
+
+.tempSlider {
+	background: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+	position:relative;
+}
+
+.lightSlider {
+	background: linear-gradient(-85deg, #FFE682 2%, #FF9E00 98%);
+	position:relative;
+}
+
+.tempSliderMinValue, .lightSliderMinValue{
+	position:absolute;
+	font-size: 18px;
+	color: #FFFFFF;
+	letter-spacing: 0;
+	text-align: left;
+	left:20px;
+	top:18px;
+}
+.lightSliderMinValue {
+	min-width: 24px;
+	min-height:24px;
+	background:url('images/lightoff.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+.tempSliderCurrentValueOval1{
+	position:absolute;
+	top:0;
+	left: 339px;
+	border: 3px solid rgba(51,51,51,0.10);
+	-moz-border-radius: 50%; 
+	-webkit-border-radius: 50%; 
+	border-radius: 50%;
+	height:60px;
+	width:60px;
+	opacity:1;
+}
+
+.tempSliderCurrentValueOval2{
+	position:absolute;
+	top:-2px;
+	left: 336px;
+	border: 4px solid #FFFFFF;
+	-moz-border-radius: 50%; 
+	-webkit-border-radius: 50%; 
+	border-radius: 50%;
+	height:65px;
+	width:65px;
+	opacity:1;
+}
+
+.tempSliderMaxValue, .lightSliderMaxValue {
+	position:absolute;
+	font-size: 18px;
+	color: #FFFFFF;
+	letter-spacing: 0;
+	text-align: left;
+	right:20px;
+	top:18px;
+}
+
+.lightSliderMaxValue {
+	min-width: 24px;
+	min-height:24px;
+	background:url('images/lightoff.png') no-repeat;
+	background-position:left;
+	background-size:contain;
+}
+
 .popupControls {
 	position:absolute;
 	bottom: -85px;

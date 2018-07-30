@@ -192,15 +192,14 @@
 		font-size: 12px;
 	}
 
-	.popupIcon {
+	.popupIcon, .popupTempValue {
 		display:none;
 	}
 
 	.popupButtonPanel {
 		margin-top:15px;
 		white-space:nowrap;
-		padding-top:10px;
-		height:45px;
+		height:30px;
 		overflow-x:auto;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
 	}
@@ -211,13 +210,46 @@
 	
 	.popupButton {
 		font-size: 13px;
+		font-family: ArialMT;
 		margin-right: 10px;
-		height:30px;
-		padding:13px;
+		max-height:30px;
 	}
 	.activeButton {
 		background-color:#FFD93E;
 	}
+	
+	.popupSlider {
+		margin:auto;
+		margin-top:25px;
+		width:60px;
+		height:336px;
+	}
+
+	.tempSlider {
+		background: linear-gradient(0deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+		position:relative;
+	}
+
+	.tempSliderMinValue, .lightSliderMinValue {
+		top:301px;
+		left:18px;
+	}
+
+	.tempSliderCurrentValueOval1{
+		top:100px;
+		left: 0px;
+	}
+
+	.tempSliderCurrentValueOval2{
+		top:97px;
+		left: -2px;
+	}
+
+	.tempSliderMaxValue, .lightSliderMaxValue {
+		left:18px;
+		top:14px;
+	}
+	
 	.popupControls {
 		position:absolute;
 		bottom: -150px;
