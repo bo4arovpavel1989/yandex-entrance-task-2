@@ -205,29 +205,52 @@
 		}
 				
 		listenToClick(){
-			document.querySelector(`.${this.selector}`).addEventListener('click', this.handleClick.bind(this));
+			let links = document.getElementsByClassName(this.selector);
+			for (let el of links) {
+				try{
+					console.log(el);
+					el.addEventListener('click', this.handleClick.bind(this));
+				} catch(e) {
+					console.log(e)
+				}
+			}
 		}
 		
 		handleClick(e) {
-			console.log(e);
 			let links = document.getElementsByClassName(`${this.selector}`);
+			
+			if (!window.matchMedia("(max-width: 978px)").matches)
+				this.state.opened = true;	
+			
+			console.log(window.matchMedia("(max-width: 978px)").matches)
+			
 			if(!this.state.opened) {
 				this.state.opened = true;
-				for (let el in links) {
+				
+				for (let el of links) {
 					try{
-						links[el].parentElement.classList.remove('hiddenDevicelink');
+						el.parentElement.classList.remove('hiddenDevicelink');
 					} catch(e) {
 						console.log(e)
 					}
 				}
+				
 			} else {
-				for (let el in links) {
+				this.state.opened = false;
+				document.querySelector('.chosenDeviceLink').classList.remove('chosenDeviceLink');
+				e.target.classList.add('chosenDeviceLink');
+				
+				for (let el of links) {
 					try{
-						links[el].classList.add('hiddenDevicelink');
+						if(!el.classList.contains('chosenDeviceLink'))
+							el.parentElement.classList.add('hiddenDevicelink');
+						else 
+							el.parentElement.classList.remove('hiddenDevicelink');
 					} catch(e) {
 						console.log(e)
 					}
 				}
+				
 			}
 		}
 	}

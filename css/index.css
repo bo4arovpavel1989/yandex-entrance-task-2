@@ -367,27 +367,41 @@ ul {
 	justify-content: space-between;
 }
 
+
+.downicon {
+	display:none;
+}
+
+.chosenDeviceLink {
+	height:30px;
+	background: #FFD93E;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px;
+	padding:7px 11px 8px 15px;
+}
+
+.hiddenDevicelink {
+	height:30px;
+	background: #F7F7F7;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px;
+	padding:7px 11px 8px 15px;
+}
+
 .devicelink {
 	display:inline-block;
 	min-height:30px;
 	text-align: center;
 	margin-right:15px;
 	padding:5px;
-}
-
-.downicon {
-	display:none;
-}
-
-.chosen {
-	width: 50px;
+	min-width: 50px;
 	height:30px;
-	top:15px;
-	background: #FFD93E;
-	border-radius: 20px;
+	cursor:pointer;
 }
+
 .devicecategory {
-	margin-top:10px;
 	font-family: Arial-BoldMT;
 	font-size: 13px;
 	color: #000000;
