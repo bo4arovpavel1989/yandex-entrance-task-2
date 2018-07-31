@@ -123,7 +123,7 @@
 							this.getElementsByClassName('popupview')[0].classList.remove('hidden');
 							this.classList.remove('openAnimation');
 							document.querySelector('.blur').classList.remove('hidden');
-						},100)
+						},50)
 						e.target.removeEventListener('click', listener, false);
 					}
 			}
