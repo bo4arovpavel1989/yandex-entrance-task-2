@@ -24,8 +24,7 @@
 				if(child.offsetWidth > 0)
 					sum += (child.offsetWidth + this.margin ) * (child.offsetHeight + this.margin);
 			})
-			console.log(totalSize)
-			console.log(sum)
+			
 			this.isOverflow = (totalSize < sum)
 		
 			if (this.isOverflow) {
@@ -64,8 +63,10 @@
 				
 				if(this.isOverflow && !this.isTimeout) {
 					this.isTimeout = true;
+					
 					let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0];
 					element.classList.add('hiddenByScroll');
+					
 					setTimeout(()=>{
 						element.classList.add(`${this.selector}-children-hidden`);
 						element.classList.add(`hidden`);
@@ -117,6 +118,7 @@
 			let listener = function(e) {
 					if(!e.target.classList.contains('controlButton')) {
 						this.classList.add('openAnimation');
+						
 						setTimeout(()=>{
 							this.classList.add('popup-device-panel');	
 							this.getElementsByClassName('smallview')[0].classList.add('hidden');
@@ -124,6 +126,7 @@
 							this.classList.remove('openAnimation');
 							document.querySelector('.blur').classList.remove('hidden');
 						},50)
+						
 						e.target.removeEventListener('click', listener, false);
 					}
 			}
