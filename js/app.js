@@ -1,32 +1,33 @@
 (function(){	
 	class Scroller {
-		constructor(selector, rows, blockWidth, margin){
+		constructor(selector, margin){
 			this.selector = selector;
-			this.blockWidth = blockWidth;
-			this.rows = rows;
 			this.margin = margin;
 			this.isOverflow;
-			this.isListenerForward = false; //check if is listener of forward arrow
-			this.isListenerBack = false; //check if is listener of back arrow
 			
 			this.listenToScreenChange();
-			this.listenToOverflow();
+			this.handleScrollForward();
+			this.handleScrollBack();
+			this.checkOverflow();
 		}
 		
-		listenToOverflow(){
-			let totalWidth = document.getElementById(this.selector).offsetWidth;
+		checkOverflow(){
+			let w = document.getElementById(this.selector).offsetWidth;
+			let h = document.getElementById(this.selector).offsetHeight;	
+			let totalSize = h * w;
 			let children = document.querySelectorAll(`.${this.selector}-children`);
 			
 			let sum = 0;
 			
 			children.forEach(child => {
 				if(child.offsetWidth > 0)
-					sum += child.offsetWidth + this.margin;
+					sum += (child.offsetWidth + this.margin ) * (child.offsetHeight + this.margin);
 			})
-			
-			this.isOverflow = (totalWidth < (sum / this.rows))
+			console.log(totalSize)
+			console.log(sum)
+			this.isOverflow = (totalSize < sum)
 		
-			if (totalWidth < (sum / this.rows)) {
+			if (this.isOverflow) {
 				this.handleOverflow();
 				this.handleScrollForward();
 			} else {
@@ -36,7 +37,7 @@
 		
 		listenToScreenChange(){
 			window.addEventListener('resize', (e) => {
-				this.listenToOverflow();
+				this.checkOverflow();
 			});
 		}
 				
@@ -51,55 +52,52 @@
 		
 		handleUnderflow(){
 			try{
-				document.querySelector(`.forward-arrows-${this.selector}.active-arrow`).classList.remove('active-arrow');
+				document.querySelector(`.forward-arrows-${this.selector}`).classList.remove('active-arrow');
 			} catch(e){
 				console.log(e);
 			}
 		}
 		
 		handleScrollForward(){
-			if(!this.isListenerForward) //add listener once
-				document.querySelector(`.forward-arrows-${this.selector}.active-arrow`).addEventListener('click',(e)=>{
-					this.isListenerForward = true;
-					this.listenToOverflow();
+			document.querySelector(`.forward-arrows-${this.selector}`).addEventListener('click',(e)=>{
+				
+				if(this.isOverflow) {
+					let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0];
+					element.classList.add('hiddenByScroll');
+					setTimeout(()=>{
+						element.classList.add(`${this.selector}-children-hidden`);
+						element.classList.add(`hidden`);
+						element.classList.remove(`${this.selector}-children`);
+					}, 100);
 					
-					if(this.isOverflow) {
-						let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0];
-						element.classList.add('hiddenByScroll');
-						setTimeout(()=>{
-							element.classList.add(`${this.selector}-children-hidden`);
-							element.classList.add(`hidden`);
-							element.classList.remove(`${this.selector}-children`);
-						}, 100);
-						
-						if(!document.querySelector(`.back-arrows-${this.selector}`).classList.contains('active-arrow')) {
-							document.querySelector(`.back-arrows-${this.selector}`).classList.add('active-arrow');
-							this.handleScrollBack();
-						}	
-					}
+					this.checkOverflow();
+				
+					if(!document.querySelector(`.back-arrows-${this.selector}`).classList.contains('active-arrow')) {
+						document.querySelector(`.back-arrows-${this.selector}`).classList.add('active-arrow');
+					}	
+				}
 				})
 		}
 		
 		handleScrollBack(){
-			if(!this.isListenerBack) //add listener once
-				document.querySelector(`.back-arrows-${this.selector}.active-arrow`).addEventListener('click',(e)=>{
-					this.isListenerBack = true;
-					this.listenToOverflow();
-					
-					let hq = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`).length;
-					
-					if(hq > 0) {
-						let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1];
-						element.classList.remove('hiddenByScroll');
-						element.classList.remove('hidden');
-						element.classList.add(`${this.selector}-children`);
-						element.classList.remove(`${this.selector}-children-hidden`);
-					}
-					
-					if(hq === 1)
-						document.querySelector(`.back-arrows-${this.selector}.active-arrow`).classList.remove('active-arrow');
-					
-				})
+			document.querySelector(`.back-arrows-${this.selector}`).addEventListener('click',(e)=>{
+				
+				let hq = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`).length;
+				
+				if(hq > 0) {
+					let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1];
+					element.classList.remove('hiddenByScroll');
+					element.classList.remove('hidden');
+					element.classList.add(`${this.selector}-children`);
+					element.classList.remove(`${this.selector}-children-hidden`);
+				}
+				
+				this.checkOverflow();
+				
+				if(hq === 1)
+					document.querySelector(`.back-arrows-${this.selector}.active-arrow`).classList.remove('active-arrow');
+				
+			})
 		}
 		
 	}
@@ -115,10 +113,14 @@
 		addClickListener(){
 			let listener = function(e) {
 					if(!e.target.classList.contains('controlButton')) {
-						this.classList.add('popup-device-panel');
-						this.getElementsByClassName('smallview')[0].classList.add('hidden');
-						this.getElementsByClassName('popupview')[0].classList.remove('hidden');
-						document.querySelector('.blur').classList.remove('hidden');
+						this.classList.add('openAnimation');
+						setTimeout(()=>{
+							this.classList.add('popup-device-panel');	
+							this.getElementsByClassName('smallview')[0].classList.add('hidden');
+							this.getElementsByClassName('popupview')[0].classList.remove('hidden');
+							this.classList.remove('openAnimation');
+							document.querySelector('.blur').classList.remove('hidden');
+						},100)
 						e.target.removeEventListener('click', listener, false);
 					}
 			}
@@ -165,12 +167,9 @@
 			let parentNode =  document.getElementById(this.selector);
 			let children = parentNode.getElementsByClassName(`${this.selector}-children`);
 			let scrollBlock = children[0];
-			let highPanel = '';
-			if (scrollBlock.classList.contains('high-panel')) //check if removed block is high-panel popup block
-				highPanel = 'high-panel';
 			let scrollBlockHTML = scrollBlock.innerHTML;
 			let newBlock = document.createElement('div');
-			newBlock.className = `${this.selector}-children ${this.styleClass} ${highPanel}`;
+			newBlock.className = `${this.selector}-children ${this.styleClass}`;
 			let oldBlock = parentNode.getElementsByClassName(`${this.selector}-children`)[0];
 			oldBlock.parentNode.removeChild(oldBlock);
 			parentNode.appendChild(newBlock);
@@ -255,8 +254,8 @@
 		}
 	}
 	
-	let deviceScroller = new Scroller('devices', 1, 200, 15);
-	let scenariosScroller = new Scroller('scenarios', 3, 200, 15);
+	let deviceScroller = new Scroller('devices', 15);
+	let scenariosScroller = new Scroller('scenarios', 15);
 	let deiceBlockScroller = new InfiniteScroller('device-block', 'device-panel');
 	let devicePopup = new DevicePopup('device-panel');
 	let navbarCollapser = new NavbarCollapser('home-navbar-button', 'menu-mobile', 'home-navbar');

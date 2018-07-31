@@ -29,6 +29,7 @@ a, a:hover {
 	position:absolute;
 	background: rgba(51,51,51,0.50);
 	z-index:2000;
+	filter:blur(5px);
 }
 
 .hidden {
@@ -362,6 +363,7 @@ a, a:hover {
 
 .devices-header {
 	margin-top:34px;
+	margin-right:50px;
 	margin-bottom:15px;
 }
 
@@ -433,7 +435,6 @@ a, a:hover {
 }
 
 .device-panel {
-	height:120px;
 	width:200px;
 	min-width:200px;
 	min-height:120px;
@@ -457,20 +458,31 @@ a, a:hover {
 }
 
 .popup-device-panel {
-	height:238px;
 	position:fixed;
 	top:100px;
 	left:30%;
 	width:630px;
 	margin-top:100px;
 	z-index:2500;
-	background-color:#FFFFFF;
+	background-color:#FFFFFF; 
 }
 
-.popup-device-panel.high-panel {
-	height:367px;
+.openAnimation {
+	position:fixed;
+	background-color:#FFFFFF; 
+    animation: openWide 0.1s linear;
 }
 
+@keyframes openWide {
+    0% { 
+		width:200px;
+		height:120px;
+	}
+    100% { 
+		width:630px;
+		height:400px;
+	}
+}
 .popupview {
 	padding: 26px 25px 25px 25px;
 }
@@ -482,6 +494,7 @@ a, a:hover {
 
 .popupState {
 	font-family: ArialMT;
+	margin-top:6px;
 	font-size: 14px;
 	color: #333333;
 }
@@ -506,6 +519,7 @@ a, a:hover {
 
 .popupButtonPanel {
 	margin-top:20px;
+	height:30px;
 }
 
 .popupButton {
