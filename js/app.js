@@ -4,6 +4,7 @@
 			this.selector = selector;
 			this.margin = margin;
 			this.isOverflow;
+			this.isTimeout = false;
 			
 			this.listenToScreenChange();
 			this.handleScrollForward();
@@ -61,13 +62,15 @@
 		handleScrollForward(){
 			document.querySelector(`.forward-arrows-${this.selector}`).addEventListener('click',(e)=>{
 				
-				if(this.isOverflow) {
+				if(this.isOverflow && !this.isTimeout) {
+					this.isTimeout = true;
 					let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children`)[0];
 					element.classList.add('hiddenByScroll');
 					setTimeout(()=>{
 						element.classList.add(`${this.selector}-children-hidden`);
 						element.classList.add(`hidden`);
 						element.classList.remove(`${this.selector}-children`);
+						this.isTimeout = false;
 					}, 100);
 					
 					this.checkOverflow();
@@ -150,6 +153,7 @@
 			this.selector = selector;
 			this.styleClass = styleClass;
 			this.length;
+			this.isTimeout = false;
 			
 			this.addClickListener();
 			this.setLength();
@@ -164,17 +168,29 @@
 		}
 		
 		handleScroll(){
-			let parentNode =  document.getElementById(this.selector);
-			let children = parentNode.getElementsByClassName(`${this.selector}-children`);
-			let scrollBlock = children[0];
-			let scrollBlockHTML = scrollBlock.innerHTML;
-			let newBlock = document.createElement('div');
-			newBlock.className = `${this.selector}-children ${this.styleClass}`;
-			let oldBlock = parentNode.getElementsByClassName(`${this.selector}-children`)[0];
-			oldBlock.parentNode.removeChild(oldBlock);
-			parentNode.appendChild(newBlock);
-			parentNode.getElementsByClassName(`${this.selector}-children`)[this.length - 1].innerHTML =  scrollBlockHTML;
-			let newPopup = new DevicePopup('device-panel');
+			if(!this.isTimeout) {
+				this.isTimeout = true;
+				
+				let parentNode =  document.getElementById(this.selector);
+				let children = parentNode.getElementsByClassName(`${this.selector}-children`);
+				let scrollBlock = children[0];
+				let scrollBlockHTML = scrollBlock.innerHTML;
+				
+				let newBlock = document.createElement('div');
+				newBlock.className = `${this.selector}-children ${this.styleClass}`;
+				
+				let oldBlock = parentNode.getElementsByClassName(`${this.selector}-children`)[0];
+				oldBlock.classList.add('hiddenByScroll');
+				
+				setTimeout(()=>{
+					oldBlock.parentNode.removeChild(oldBlock);
+					parentNode.appendChild(newBlock);
+					parentNode.getElementsByClassName(`${this.selector}-children`)[this.length - 1].innerHTML =  scrollBlockHTML;
+					let newPopup = new DevicePopup('device-panel');
+					this.isTimeout = false;
+				},100)
+				
+			}
 		}
 		
 	}

@@ -203,6 +203,7 @@ a, a:hover {
 .favscenarios {
 	overflow-y:hidden;
 	margin-left:26px;
+	max-height:370px;
 }
 
 .scenarios {
@@ -230,10 +231,12 @@ a, a:hover {
     0% { 
 		opacity: 1;
 		margin-left:0;
+		margin-top:0;
 	}
     100% { 
 		opacity: 0.1;
 		margin-left:-200px;
+		margin-top:-200px;
 	}
 }
 
