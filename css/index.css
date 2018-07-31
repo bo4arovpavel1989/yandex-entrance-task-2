@@ -151,6 +151,9 @@ a, a:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+.common-data {
 	position:relative;
 }
 
@@ -190,13 +193,12 @@ a, a:hover {
 	flex-direction: column;
 	overflow-y: hidden;
 	height:305px;
-	position:relative;
 }
 
 .uparrow {
 	position: absolute;
-	bottom: 12px;
-	right:114px;
+	top: 372px;
+    left: 525px;
 	cursor:pointer;
 }
 
@@ -461,8 +463,8 @@ a, a:hover {
 }
 
 .popup-device-panel {
-	position:fixed;
-	top:100px;
+	position:absolute;
+	top:0;
 	left:30%;
 	width:630px;
 	margin-top:100px;
