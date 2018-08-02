@@ -71,6 +71,7 @@
 						element.classList.add(`${this.selector}-children-hidden`);
 						element.classList.add(`hidden`);
 						element.classList.remove(`${this.selector}-children`);
+						element.classList.remove('hiddenByScroll');
 						this.isTimeout = false;
 					}, 100);
 					
@@ -85,22 +86,27 @@
 		
 		handleScrollBack(){
 			document.querySelector(`.back-arrows-${this.selector}`).addEventListener('click',(e)=>{
-				
-				let hq = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`).length;
-				
-				if(hq > 0) {
-					let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1];
-					element.classList.remove('hiddenByScroll');
-					element.classList.remove('hidden');
-					element.classList.add(`${this.selector}-children`);
-					element.classList.remove(`${this.selector}-children-hidden`);
+				if(!this.isTimeout){
+					this.isTimeout = true;
+					let hq = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`).length;
+					
+					if(hq > 0) {
+						let element = document.getElementById(this.selector).getElementsByClassName(`${this.selector}-children-hidden`)[hq-1];
+						element.classList.add('shownByScroll');
+						element.classList.remove('hidden');								
+						element.classList.add(`${this.selector}-children`);
+						element.classList.remove(`${this.selector}-children-hidden`);
+						setTimeout(()=>{element.classList.remove('shownByScroll')},100)
+					}
+					
+					setTimeout(()=>{this.isTimeout = false},100)
+					
+					this.checkOverflow();
+					
+					if(hq === 1)
+						document.querySelector(`.back-arrows-${this.selector}.active-arrow`).classList.remove('active-arrow');
+					
 				}
-				
-				this.checkOverflow();
-				
-				if(hq === 1)
-					document.querySelector(`.back-arrows-${this.selector}.active-arrow`).classList.remove('active-arrow');
-				
 			})
 		}
 		
@@ -118,12 +124,14 @@
 			let self = this;
 			
 			let listener = function(e) {
-					if(!e.target.classList.contains('controlButton') && !this.opened) {
+					if(!e.target.classList.contains('controlButton') && !self.opened) {
 						self.opened = true;
 						this.classList.add('openAnimation');
+						
 						let content = this.getElementsByClassName('popupview')[0].innerHTML;
-						document.getElementById('popup-container').classList.add('popup-device-panel');	
 						document.getElementById('popup-container').querySelector('.popupview').innerHTML = content;
+						
+						document.getElementById('popup-container').classList.add('popup-device-panel');	
 						
 						setTimeout(()=>{
 							document.querySelector('.content').classList.add('blurred');
@@ -147,8 +155,10 @@
 		}
 		
 		addCloseListener() {
+			let self = this;
 			document.getElementById('popup-container').querySelector('.popupview').querySelectorAll(`.controlButton`).forEach(el => {
 				el.addEventListener('click', function (e) {
+					self.opened = false;
 					document.querySelector('.blur').classList.add('hidden');
 					document.getElementById('popup-container').classList.add('hidden');
 					document.querySelector('.content').classList.remove('blurred');

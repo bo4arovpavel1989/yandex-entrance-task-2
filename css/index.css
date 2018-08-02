@@ -245,6 +245,24 @@ a, a:hover {
 	}
 }
 
+.shownByScroll {
+    animation: drivein 0.2s linear;
+}
+
+@keyframes drivein {
+    0% { 
+		opacity: 0.1;
+		margin-left:-200px;
+		margin-top:-200px;
+	}
+	
+    100% { 
+		opacity: 1;
+		margin-left:0;
+		margin-top:0;
+	}
+}
+
 .scenarios-header {
 	padding-right:50px;
 }
@@ -476,7 +494,7 @@ a, a:hover {
 }
 
 .openAnimation {
-	position:absolute;
+	position:fixed;
 	background-color:#FFFFFF; 
     animation: openWide 0.1s linear;
 }
