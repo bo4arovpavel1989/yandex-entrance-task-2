@@ -21,6 +21,10 @@ a, a:hover {
 	text-decoration: none;
 }
 
+.blurred {
+	filter:blur(5px);
+}
+
 .blur {
 	top:0;
 	bottom:0;
@@ -29,7 +33,6 @@ a, a:hover {
 	position:absolute;
 	background: rgba(51,51,51,0.50);
 	z-index:2000;
-	filter:blur(5px);
 }
 
 .hidden {
@@ -439,7 +442,7 @@ a, a:hover {
 	margin-top:5px;
 }
 
-.device-panel {
+.device-panel, .poppedup-device-panel {
 	width:200px;
 	min-width:200px;
 	min-height:120px;
@@ -473,7 +476,7 @@ a, a:hover {
 }
 
 .openAnimation {
-	position:fixed;
+	position:absolute;
 	background-color:#FFFFFF; 
     animation: openWide 0.1s linear;
 }

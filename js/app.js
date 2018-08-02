@@ -111,20 +111,27 @@
 			this.selector = selector;
 			
 			this.addClickListener();
-			this.addCloseListener();
+			this.opened = false;
 		}
 		
 		addClickListener(){
+			let self = this;
+			
 			let listener = function(e) {
-					if(!e.target.classList.contains('controlButton')) {
+					if(!e.target.classList.contains('controlButton') && !this.opened) {
+						self.opened = true;
 						this.classList.add('openAnimation');
+						let content = this.getElementsByClassName('popupview')[0].innerHTML;
+						document.getElementById('popup-container').classList.add('popup-device-panel');	
+						document.getElementById('popup-container').querySelector('.popupview').innerHTML = content;
 						
 						setTimeout(()=>{
-							this.classList.add('popup-device-panel');	
-							this.getElementsByClassName('smallview')[0].classList.add('hidden');
-							this.getElementsByClassName('popupview')[0].classList.remove('hidden');
+							document.querySelector('.content').classList.add('blurred');
+							document.querySelector('.home-navbar').classList.add('blurred');	
+							document.getElementById('popup-container').classList.remove('hidden');	
+							document.querySelector('.blur').classList.remove('hidden');	
 							this.classList.remove('openAnimation');
-							document.querySelector('.blur').classList.remove('hidden');
+							self.addCloseListener();
 						},50)
 						
 						e.target.removeEventListener('click', listener, false);
@@ -140,12 +147,12 @@
 		}
 		
 		addCloseListener() {
-			document.querySelectorAll(`.controlButton`).forEach(el => {
+			document.getElementById('popup-container').querySelector('.popupview').querySelectorAll(`.controlButton`).forEach(el => {
 				el.addEventListener('click', function (e) {
 					document.querySelector('.blur').classList.add('hidden');
-					this.parentElement.parentElement.classList.add('hidden');
-					this.parentElement.parentElement.previousElementSibling.classList.remove('hidden');
-					this.parentElement.parentElement.parentElement.classList.remove('popup-device-panel');
+					document.getElementById('popup-container').classList.add('hidden');
+					document.querySelector('.content').classList.remove('blurred');
+					document.querySelector('.home-navbar').classList.remove('blurred');	
 				})
 			})
 		}
