@@ -98,7 +98,7 @@ a, a:hover {
 }
 
 .content {
-	padding:30px 40px 0 40px;
+	padding:30px 0px 0 40px;
 	margin-top:92px;
 	position:relative;
 }
@@ -116,7 +116,7 @@ a, a:hover {
 }
 
 .inner-header {
-	margin: 0 0 20px 0;
+	margin: 0 0 0px 0;
 	display:inline;
 	font-size: 18px;
 	color: #333333;
@@ -144,7 +144,7 @@ a, a:hover {
 	background:url('images/main_bg.png') no-repeat;
 	background-position:center;
 	background-size:contain;
-	padding: 26px 20px 0 25px;
+	padding: 26px 5px 0 25px;
 	margin-top:20px;
 }
 
@@ -201,14 +201,14 @@ a, a:hover {
 .uparrow {
 	position: absolute;
 	top: 372px;
-    left: 525px;
+    left: 540px;
 	cursor:pointer;
 }
 
 .favscenarios {
 	overflow-y:hidden;
 	margin-left:26px;
-	max-height:370px;
+	max-height:371px;
 }
 
 .scenarios {
@@ -390,10 +390,11 @@ a, a:hover {
 .devices-header {
 	margin-top:34px;
 	margin-right:50px;
-	margin-bottom:15px;
+	margin-bottom:25px;
 }
 
 .deviceheader {
+	margin-right:13px;
 	height:30px;
 }
 
@@ -457,7 +458,6 @@ a, a:hover {
 	overflow-x: hidden;
 	overflow-y:hidden;
 	max-height:350px;
-	margin-top:5px;
 }
 
 .device-panel, .poppedup-device-panel {
@@ -558,7 +558,7 @@ a, a:hover {
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
 	background-color:#F2F1F0;   
-	padding: 7px 15px 8px 7px;
+	padding: 7px 11px 8px 15px;
 }
 
 .activeButton {
