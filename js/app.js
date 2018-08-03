@@ -273,11 +273,11 @@
 			} else {
 				this.state.opened = false;
 				document.querySelector('.chosenDeviceLink').classList.remove('chosenDeviceLink');
-				e.target.classList.add('chosenDeviceLink');
+				e.target.parentElement.classList.add('chosenDeviceLink');
 				
 				for (let el of links) {
 					try{
-						if(!el.classList.contains('chosenDeviceLink'))
+						if(!el.parentElement.classList.contains('chosenDeviceLink'))
 							el.parentElement.classList.add('hiddenDevicelink');
 						else 
 							el.parentElement.classList.remove('hiddenDevicelink');
