@@ -157,7 +157,7 @@
 	}
 	
 	.chosenDeviceLink {
-		padding: 5px 31px 8px 16px;
+		padding: 7px 31px 8px 16px;
 	}
 	
 	.devicelink {
@@ -181,7 +181,7 @@
 	
 	.devices-header {
 		margin-top:16px;
-		margin-bottom:20px;
+		margin-bottom:17px;
 		margin-right:0;
 	}
 	
@@ -320,6 +320,7 @@
 	}
 	
 	.copyright {
-		margin-left:0;
+		position:relative;
+		margin-left:25px;
 	}
 }

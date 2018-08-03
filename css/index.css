@@ -390,7 +390,7 @@ a, a:hover {
 .devices-header {
 	margin-top:34px;
 	margin-right:50px;
-	margin-bottom:25px;
+	margin-bottom:20px;
 }
 
 .deviceheader {
@@ -417,7 +417,6 @@ a, a:hover {
 }
 
 .chosenDeviceLink {
-	height:30px;
 	background: #FFD93E;
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
@@ -426,22 +425,18 @@ a, a:hover {
 }
 
 .hiddenDevicelink {
-	height:30px;
 	background: #F7F7F7;
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
-	padding:7px 11px 8px 15px;
+	padding:7px 14px 8px 15px;
 }
 
 .devicelink {
 	display:inline-block;
-	min-height:30px;
 	text-align: center;
 	margin-right:15px;
-	padding:5px;
 	min-width: 50px;
-	height:30px;
 	cursor:pointer;
 }
 
@@ -758,7 +753,13 @@ footer {
 	position: fixed;
 	top:92%;
 	height:64px;
+	width:100%;
 	padding: 22px 36px 27px 40px;
+}
+
+.footer-content {
+	position:relative;
+	width:100%;
 }
 
 .footerlink {
@@ -769,10 +770,10 @@ footer {
 }
 
 .copyright {
-	float:right;
-	display:inline;
+	position:absolute;
 	font-size: 12px;
 	color: #858585;
 	letter-spacing: 0.01px;
-	margin-left:1000px;
+	right:36px;
+	bottom:0px;
 }
