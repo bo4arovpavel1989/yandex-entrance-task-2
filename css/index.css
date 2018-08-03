@@ -276,6 +276,7 @@ a, a:hover {
 	overflow-y: hidden;
 	max-height:350px;
 	margin-top:20px;
+	margin-right:40px;
 }
 
 .scenarios-panel {

@@ -132,6 +132,7 @@
 		flex-wrap: nowrap;
 		overflow-x: auto;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
+		margin-right:0;
 	}
 	
 	.scenarios::-webkit-scrollbar {	
