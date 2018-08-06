@@ -160,7 +160,7 @@
 	}
 	
 	.chosenDeviceLink {
-		padding: 7px 31px 8px 16px;
+		padding: 5px 31px 10px 16px;
 	}
 	
 	.devicelink {
@@ -174,7 +174,7 @@
 	.downicon {
 		position:absolute;
 		bottom:3px;
-		right:-15px;
+		right:-16px;
 		display:inline-block;
 		min-width: 10px !important;
 		min-height:7px !important;

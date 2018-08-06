@@ -422,7 +422,7 @@ a, a:hover {
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
-	padding:7px 11px 8px 15px;
+	padding:5px 11px 10px 15px;
 }
 
 .hiddenDevicelink {
@@ -430,10 +430,11 @@ a, a:hover {
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
 	border-radius: 20px;
-	padding:7px 14px 8px 15px;
+	padding:5px 14px 10px 15px;
 }
 
 .devicelink {
+	height:30px;
 	display:inline-block;
 	text-align: center;
 	margin-right:15px;
@@ -459,7 +460,6 @@ a, a:hover {
 .device-panel, .poppedup-device-panel {
 	width:200px;
 	min-width:200px;
-	min-height:120px;
 	background-color:#F7F7F7;
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
@@ -469,6 +469,11 @@ a, a:hover {
 	cursor:pointer;
 }
 
+.device-panel {
+	height:120px;
+}
+
+
 .smallview {
 	min-height:120px;
 	display: -webkit-flex; 
@@ -476,7 +481,7 @@ a, a:hover {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 14px 0 14px 15px;
+	padding: 14px 14px 14px 15px;
 }
 
 .popup-device-panel {
