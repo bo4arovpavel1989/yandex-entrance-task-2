@@ -146,8 +146,15 @@
 		font-size: 18px;
 		margin-right:57px;
 	}
-		
+	
+	.devicelinkPanel{
+		position:relative;
+	}
+	
 	.devicelinkToggler {
+		position:absolute;
+		top:-20px;
+		background-color:white;
 		display: -webkit-flex; 
 		-webkit-flex-direction: column;
 		display: flex;

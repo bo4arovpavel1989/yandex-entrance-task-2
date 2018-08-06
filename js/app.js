@@ -237,7 +237,7 @@
 	class DeviceLinkToggler {
 		constructor(selector){
 			this.selector = selector;
-			this.state = {opened:false}
+			this.opened = false;
 			
 			this.listenToClick();
 		}
@@ -257,23 +257,25 @@
 			let links = document.getElementsByClassName(`${this.selector}`);
 			
 			if (!window.matchMedia("(max-width: 978px)").matches)
-				this.state.opened = true;	
+				this.opened = true;	
 			
-			if(!this.state.opened) {
-				this.state.opened = true;
+			if(!this.opened) {
+				this.opened = true;
 				
 				for (let el of links) {
 					try{
 						el.parentElement.classList.remove('hiddenDevicelink');
+						el.querySelector('.downicon').classList.add('hidden');
 					} catch(e) {
 						console.log(e)
 					}
 				}
 				
 			} else {
-				this.state.opened = false;
+				this.opened = false;
 				document.querySelector('.chosenDeviceLink').classList.remove('chosenDeviceLink');
 				e.target.parentElement.classList.add('chosenDeviceLink');
+				e.target.querySelector('.downicon').classList.remove('hidden');
 				
 				for (let el of links) {
 					try{
