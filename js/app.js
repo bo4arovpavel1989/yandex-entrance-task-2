@@ -1,6 +1,6 @@
 (function(){	
 	class Scroller {
-		constructor(selector, margin){
+		constructor(selector, margin, containerHeigh){
 			this.selector = selector;
 			this.margin = margin;
 			this.isOverflow;
@@ -13,8 +13,9 @@
 		}
 		
 		checkOverflow(){
-			let w = document.getElementById(this.selector).offsetWidth;
-			let h = document.getElementById(this.selector).offsetHeight;	
+			let container =  document.getElementById(this.selector);
+			let w = container.offsetWidth;
+			let h = container.offsetHeight;	
 			let totalSize = h * w;
 			let children = document.querySelectorAll(`.${this.selector}-children`);
 			
@@ -25,7 +26,11 @@
 					sum += (child.offsetWidth + this.margin ) * (child.offsetHeight + this.margin);
 			})
 			
-			this.isOverflow = (totalSize < sum)
+			let lastChild = children[children.length - 1];
+			
+			let distance = lastChild.offsetTop - container.offsetTop; //расстояние о верха последнего элемента до верха контейнера
+						
+			this.isOverflow = ((totalSize < sum) || (distance > h))
 		
 			if (this.isOverflow) {
 				this.handleOverflow();
