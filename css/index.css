@@ -207,7 +207,7 @@ a, a:hover {
 
 .favscenarios {
 	overflow-y:hidden;
-	margin-left:26px;
+	margin-left:11px;
 	max-height:371px;
 }
 
@@ -218,7 +218,7 @@ a, a:hover {
 .arrows {
 	display:inline;
 	float:right;
-	margin-right:16px;
+	margin-left:22.8px;
 	padding:0;
 	opacity:0.3;
 	cursor:pointer;
@@ -264,7 +264,8 @@ a, a:hover {
 }
 
 .scenarios-header {
-	padding-right:50px;
+	padding-right:44.2px;
+	margin-left:15px;
 }
 
 .scenarios {
@@ -293,7 +294,7 @@ a, a:hover {
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 14px 0 14px 15px;
-	margin-right:15px;
+	margin-left:15px;
 	margin-bottom:15px;
 }
 
@@ -390,7 +391,7 @@ a, a:hover {
 
 .devices-header {
 	margin-top:34px;
-	margin-right:50px;
+	margin-right:44.2px;
 	margin-bottom:20px;
 }
 

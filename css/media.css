@@ -122,6 +122,10 @@
 		margin-right:20px;
 	}
 	
+	.scenarios-header {
+		margin-left:0;
+	}
+	
 	.favscenarios {
 		margin-top: 31px;
 		margin-left: 0;
@@ -142,6 +146,10 @@
 		
 	}
 	
+	.scenarios-panel {
+		margin-left:0;
+		margin-right:15px;
+	}
 	.deviceheader {
 		font-size: 18px;
 		margin-right:57px;
