@@ -786,6 +786,7 @@ footer {
 
 .footerlink {
 	font-size: 12px;
+	font-family: Arial;
 	color: #858585;
 	letter-spacing: 0.01px;
 	margin-right:20px;
@@ -793,6 +794,7 @@ footer {
 
 .copyright {
 	position:absolute;
+	font-family: Arial;
 	font-size: 12px;
 	color: #858585;
 	letter-spacing: 0.01px;
