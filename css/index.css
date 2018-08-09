@@ -205,6 +205,18 @@ a, a:hover {
 	cursor:pointer;
 }
 
+.uparrow-bg {
+	position: absolute;
+	top: 375px;
+    left: 450px;
+    width: 200px;
+    height: 26px;
+	background-color: #F7F7F7;
+	-moz-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px;
+}
+
 .favscenarios {
 	overflow-y:hidden;
 	margin-left:11px;
