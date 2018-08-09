@@ -130,12 +130,14 @@ a, a:hover {
 	font-size: 27px;
 	color: #333333;
 	margin-top:6px;
+	margin-bottom:6px;
 }
 
 .general-info {
 	font-family: Arial;
 	font-size: 14px;
 	color: #333333;
+	margin-bottom:25px;
 }
 
 .main-panel {
@@ -144,7 +146,7 @@ a, a:hover {
 	background:url('images/main_bg.png') no-repeat;
 	background-position:center;
 	background-size:contain;
-	padding: 26px 5px 0 25px;
+	padding: 20px 5px 0 25px;
 	margin-top:20px;
 }
 
@@ -195,7 +197,7 @@ a, a:hover {
 	display: flex;
 	flex-direction: column;
 	overflow-y: hidden;
-	height:305px;
+	height:311px;
 }
 
 .uparrow {
@@ -207,10 +209,10 @@ a, a:hover {
 
 .uparrow-bg {
 	position: absolute;
-	top: 375px;
-    left: 450px;
-    width: 200px;
-    height: 27px;
+	top: 372px;
+    left: 451px;
+    width: 198px;
+    height: 29px;
 	background-color: #F7F7F7;
 	-moz-border-radius: 20px; 
 	-webkit-border-radius: 20px; 
