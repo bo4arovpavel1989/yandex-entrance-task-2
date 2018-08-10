@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-@font-face {
+@font-face {/*кириллического шрифта ArialMT не найти, поэтому в тех случаях используется Arial*/
 	font-family: ArialMT;
 	src: local('ArialMT.ttf'), url(fonts/ArialMT.ttf);
 	font-weight: normal;
