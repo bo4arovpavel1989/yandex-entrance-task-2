@@ -168,11 +168,12 @@ a, a:hover {
 
 .drizzle {
 	display:inline-block;
-	min-width: 26px;
-	min-height:26px;
+	width: 26px;
+	height:26px;
 	background:url('images/drizzle.png') no-repeat;
 	background-position:left;
 	background-size:contain;
+	margin-left:-2px;
 }
 
 .where {
@@ -535,7 +536,7 @@ a, a:hover {
 }
 
 .popupState {
-	font-family: ArialMT;
+	font-family: Arial;
 	margin-top:6px;
 	font-size: 14px;
 	color: #333333;
@@ -740,6 +741,7 @@ a, a:hover {
 	letter-spacing: 0;
 	text-align: center;
 	min-width:307px;
+	height: 60px;
 	padding: 21px 92px 20px 92px;
 }
 
